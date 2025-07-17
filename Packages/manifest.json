@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.codewriter.morpeh.events": "https://github.com/codewriter-packages/Morpeh.Events.git",
     "com.scellecs.morpeh": "https://github.com/scellecs/morpeh.git?path=Scellecs.Morpeh",
     "com.unity.collab-proxy": "2.8.2",
     "com.unity.feature.development": "1.0.1",

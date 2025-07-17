@@ -1,5 +1,7 @@
 using _Scripts.Core.Configs;
 using _Scripts.Core.Systems;
+using _Scripts.Core.Systems.PlayerBaseSystems;
+using _Scripts.Core.Systems.PlayerInteractSystems;
 using Scellecs.Morpeh;
 using UnityEngine;
 using VContainer;
@@ -13,10 +15,13 @@ namespace _Scripts.Core
         private CameraConfig _cameraConfig;
         private MovementConfig _movementConfig;
         private PlayerInput _playerInput;
+        private PlayerInteractConfig _playerInteractConfig;
 
         [Inject]
-        public void Construct(PlayerInput input, HealthConfig healthConfig, CameraConfig cameraConfig, MovementConfig movementConfig)
+        public void Construct(PlayerInput input, HealthConfig healthConfig, CameraConfig cameraConfig, MovementConfig movementConfig,
+            PlayerInteractConfig playerInteractConfig)
         {
+            _playerInteractConfig = playerInteractConfig;
             _playerInput = input;
             _movementConfig = movementConfig;
             _cameraConfig = cameraConfig;
@@ -30,6 +35,7 @@ namespace _Scripts.Core
             systemsGroup.AddSystem(new HealthSystem(_healthConfig));
             systemsGroup.AddSystem(new PlayerMovementSystem(_movementConfig, _playerInput));
             systemsGroup.AddSystem(new PlayerLookSystem(_cameraConfig, _playerInput));
+            systemsGroup.AddSystem(new PlayerInteractSystem(_playerInteractConfig, _playerInput));
 
             this.world.AddSystemsGroup(order: 0, systemsGroup);
         }
