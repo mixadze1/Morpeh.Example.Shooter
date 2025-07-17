@@ -1,0 +1,256 @@
+fileFormatVersion: 2
+guid: e0345bd271aefa844b9d1faaa41e6a22
+timeCreated: 1553425658
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Arm_mesh001
+    100002: Automatic_Rifle_Aim_Mesh02
+    100004: Automatic_Rifle_Body_Mesh02
+    100006: Automatic_Rifle_detail01
+    100008: Automatic_Rifle_Detail02
+    100010: Automatic_Rifle_Detail_Mesh
+    100012: Automatic_Rifle_Flaslight_Mesh02
+    100014: Automatic_Rifle_Glasses_Mesh02
+    100016: Automatic_Rifle_Grenade_Gun_Mesh02
+    100018: Automatic_Rifle_Magazine_Mesh02
+    100020: Automatic_Rifle_Mufller_Mesh02
+    100022: Automatic_Rifle_Trigger_Mesh
+    100024: B_Automatic_Rifle_Body
+    100026: B_Automatic_Rifle_detail01
+    100028: B_Automatic_Rifle_Magazine
+    100030: B_Automatic_Rifle_Trigger
+    100032: Camera001
+    100034: Character001
+    100036: Character001Hub001
+    100038: Character001LArm1
+    100040: Character001LArm21
+    100042: Character001LArm22
+    100044: Character001LArmCollarbone
+    100046: Character001LArmDigit11
+    100048: Character001LArmDigit12
+    100050: Character001LArmDigit13
+    100052: Character001LArmDigit21
+    100054: Character001LArmDigit22
+    100056: Character001LArmDigit23
+    100058: Character001LArmDigit31
+    100060: Character001LArmDigit32
+    100062: Character001LArmDigit33
+    100064: Character001LArmDigit41
+    100066: Character001LArmDigit42
+    100068: Character001LArmDigit43
+    100070: Character001LArmDigit51
+    100072: Character001LArmDigit52
+    100074: Character001LArmDigit53
+    100076: Character001LArmIKTarget
+    100078: Character001LArmPalm
+    100080: Character001RArm1
+    100082: Character001RArm21
+    100084: Character001RArm22
+    100086: Character001RArmCollarbone
+    100088: Character001RArmDigit11
+    100090: Character001RArmDigit12
+    100092: Character001RArmDigit13
+    100094: Character001RArmDigit21
+    100096: Character001RArmDigit22
+    100098: Character001RArmDigit23
+    100100: Character001RArmDigit31
+    100102: Character001RArmDigit32
+    100104: Character001RArmDigit33
+    100106: Character001RArmDigit41
+    100108: Character001RArmDigit42
+    100110: Character001RArmDigit43
+    100112: Character001RArmDigit51
+    100114: Character001RArmDigit52
+    100116: Character001RArmDigit53
+    100118: Character001RArmIKTarget
+    100120: Character001RArmPalm
+    100122: Glove_mesh
+    100124: Group_arms
+    100126: //RootNode
+    100128: P_Automatic_Rifle_Body
+    100130: P_Automatic_Rifle_detail01
+    100132: P_Automatic_Rifle_Magazine
+    100134: P_Automatic_Rifle_Trigger
+    100136: Rectangle001
+    400000: Arm_mesh001
+    400002: Automatic_Rifle_Aim_Mesh02
+    400004: Automatic_Rifle_Body_Mesh02
+    400006: Automatic_Rifle_detail01
+    400008: Automatic_Rifle_Detail02
+    400010: Automatic_Rifle_Detail_Mesh
+    400012: Automatic_Rifle_Flaslight_Mesh02
+    400014: Automatic_Rifle_Glasses_Mesh02
+    400016: Automatic_Rifle_Grenade_Gun_Mesh02
+    400018: Automatic_Rifle_Magazine_Mesh02
+    400020: Automatic_Rifle_Mufller_Mesh02
+    400022: Automatic_Rifle_Trigger_Mesh
+    400024: B_Automatic_Rifle_Body
+    400026: B_Automatic_Rifle_detail01
+    400028: B_Automatic_Rifle_Magazine
+    400030: B_Automatic_Rifle_Trigger
+    400032: Camera001
+    400034: Character001
+    400036: Character001Hub001
+    400038: Character001LArm1
+    400040: Character001LArm21
+    400042: Character001LArm22
+    400044: Character001LArmCollarbone
+    400046: Character001LArmDigit11
+    400048: Character001LArmDigit12
+    400050: Character001LArmDigit13
+    400052: Character001LArmDigit21
+    400054: Character001LArmDigit22
+    400056: Character001LArmDigit23
+    400058: Character001LArmDigit31
+    400060: Character001LArmDigit32
+    400062: Character001LArmDigit33
+    400064: Character001LArmDigit41
+    400066: Character001LArmDigit42
+    400068: Character001LArmDigit43
+    400070: Character001LArmDigit51
+    400072: Character001LArmDigit52
+    400074: Character001LArmDigit53
+    400076: Character001LArmIKTarget
+    400078: Character001LArmPalm
+    400080: Character001RArm1
+    400082: Character001RArm21
+    400084: Character001RArm22
+    400086: Character001RArmCollarbone
+    400088: Character001RArmDigit11
+    400090: Character001RArmDigit12
+    400092: Character001RArmDigit13
+    400094: Character001RArmDigit21
+    400096: Character001RArmDigit22
+    400098: Character001RArmDigit23
+    400100: Character001RArmDigit31
+    400102: Character001RArmDigit32
+    400104: Character001RArmDigit33
+    400106: Character001RArmDigit41
+    400108: Character001RArmDigit42
+    400110: Character001RArmDigit43
+    400112: Character001RArmDigit51
+    400114: Character001RArmDigit52
+    400116: Character001RArmDigit53
+    400118: Character001RArmIKTarget
+    400120: Character001RArmPalm
+    400122: Glove_mesh
+    400124: Group_arms
+    400126: //RootNode
+    400128: P_Automatic_Rifle_Body
+    400130: P_Automatic_Rifle_detail01
+    400132: P_Automatic_Rifle_Magazine
+    400134: P_Automatic_Rifle_Trigger
+    400136: Rectangle001
+    2100000: 09 - Default
+    2100002: 14 - Default
+    2100004: 13 - Default
+    4300000: Arm_mesh001
+    4300002: Glove_mesh
+    4300004: Automatic_Rifle_Grenade_Gun_Mesh02
+    4300006: Automatic_Rifle_Body_Mesh02
+    4300008: Automatic_Rifle_Magazine_Mesh02
+    4300010: Automatic_Rifle_Mufller_Mesh02
+    4300012: Automatic_Rifle_Aim_Mesh02
+    4300014: Automatic_Rifle_Flaslight_Mesh02
+    4300016: Automatic_Rifle_Detail02
+    4300018: Automatic_Rifle_Glasses_Mesh02
+    4300020: Automatic_Rifle_Detail_Mesh
+    4300022: Automatic_Rifle_detail01
+    4300024: Automatic_Rifle_Trigger_Mesh
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Arm_mesh001
+    13700002: Automatic_Rifle_Aim_Mesh02
+    13700004: Automatic_Rifle_Body_Mesh02
+    13700006: Automatic_Rifle_detail01
+    13700008: Automatic_Rifle_Detail02
+    13700010: Automatic_Rifle_Detail_Mesh
+    13700012: Automatic_Rifle_Flaslight_Mesh02
+    13700014: Automatic_Rifle_Glasses_Mesh02
+    13700016: Automatic_Rifle_Grenade_Gun_Mesh02
+    13700018: Automatic_Rifle_Magazine_Mesh02
+    13700020: Automatic_Rifle_Mufller_Mesh02
+    13700022: Automatic_Rifle_Trigger_Mesh
+    13700024: Glove_mesh
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

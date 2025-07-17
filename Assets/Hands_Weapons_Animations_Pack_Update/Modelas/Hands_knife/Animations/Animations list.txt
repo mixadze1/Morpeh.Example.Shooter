@@ -1,0 +1,15 @@
+Get 0-35
+
+Idle 36-110
+
+Idle other 111-300
+
+walk 301-332
+
+run 333-352
+
+Attack 353-405
+
+Attack(2) 406-442
+
+Hide 443-465
