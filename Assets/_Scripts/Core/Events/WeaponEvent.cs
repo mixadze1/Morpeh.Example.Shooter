@@ -8,10 +8,13 @@ namespace _Scripts.Core.Events
         public Trigger Trigger { get; private set; }
         public Entity Entity { get; private set; }
 
-        public WeaponEvent(Trigger trigger, Entity entity)
+        public bool IsMainPlayer { get; private set; }
+        
+        public WeaponEvent(Trigger trigger, Entity entity, bool isPlayer = true)
         {
             Trigger = trigger;
             Entity = entity;
+            IsMainPlayer = true;
         }
     }
 }

@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf7afc2084d40a89be58daa09f0e4f6, type: 3}
   m_Name: WeaponsConfigs
   m_EditorClassIdentifier: 
+  _lifetimeBullet: 5
   _weapons:
     _serializedList:
     - Key: 3
       Value:
-        _speedBullet: 5
+        _speedBullet: 700
         _bulletPrefab: {fileID: 8738878015750492325, guid: 1bf53e858a93b1b4096d1d3759f53180, type: 3}
         _playerWeaponPreset: {fileID: 8155955866234670275, guid: b5569001e9691e64789fc152f86f5e6f, type: 3}
         _magazineConfig:
@@ -26,9 +27,9 @@ MonoBehaviour:
           _serializedList:
           - Key: 1
             Value:
-              AnimationClip: {fileID: 7400000, guid: a1b385c34aa0b054a9e0e41826eb0eeb, type: 3}
+              AnimationClip: {fileID: 7400000, guid: a4b3afb32f292db41a38d24b4d4043e0, type: 2}
               FadeTime: 0.3
-              Speed: 1
+              Speed: 1.75
           - Key: 6
             Value:
               AnimationClip: {fileID: 7400000, guid: 949e0c69ac83db74fb36acf15c846e09, type: 3}
@@ -54,11 +55,51 @@ MonoBehaviour:
               AnimationClip: {fileID: 7400000, guid: 7667494cd6910d24fb993ccbc2a16911, type: 3}
               FadeTime: 0.3
               Speed: 1
+    - Key: 4
+      Value:
+        _speedBullet: 340
+        _bulletPrefab: {fileID: 8738878015750492325, guid: 1bf53e858a93b1b4096d1d3759f53180, type: 3}
+        _playerWeaponPreset: {fileID: 244685069403581142, guid: c807fef552aa28b4eb19048f431b775c, type: 3}
+        _magazineConfig:
+          MaxAmmoInMagazine: 14
+          AmountMagazines: 8
+        AnimationConfig:
+          _serializedList:
+          - Key: 1
+            Value:
+              AnimationClip: {fileID: 7400000, guid: e20690ac7b30a9146a4fdd7799a125d8, type: 3}
+              FadeTime: 0.3
+              Speed: 1.75
+          - Key: 6
+            Value:
+              AnimationClip: {fileID: 7400000, guid: cadd982bbf524644094036f3e389ad63, type: 3}
+              FadeTime: 0.3
+              Speed: 1
+          - Key: 2
+            Value:
+              AnimationClip: {fileID: 7400000, guid: cc0c6edbec561f548abda5714a879db2, type: 3}
+              FadeTime: 0.1
+              Speed: 1.5
+          - Key: 3
+            Value:
+              AnimationClip: {fileID: 7400000, guid: 4883f0a3be7d9164b8b9df7b4f685809, type: 3}
+              FadeTime: 0.3
+              Speed: 1
+          - Key: 4
+            Value:
+              AnimationClip: {fileID: 7400000, guid: c77ac813c01970e44871fc413736d3d5, type: 3}
+              FadeTime: 0.3
+              Speed: 1
+          - Key: 5
+            Value:
+              AnimationClip: {fileID: 7400000, guid: 74292253e1a143240ad8f57fee83cfd2, type: 3}
+              FadeTime: 0.3
+              Speed: 1
     - Key: 2
       Value:
         _speedBullet: 600
-        _bulletPrefab: {fileID: 0}
-        _playerWeaponPreset: {fileID: 0}
+        _bulletPrefab: {fileID: 8738878015750492325, guid: 1bf53e858a93b1b4096d1d3759f53180, type: 3}
+        _playerWeaponPreset: {fileID: 3971571409887457217, guid: d7690834b101ba146b502ba3c1df7e01, type: 3}
         _magazineConfig:
           MaxAmmoInMagazine: 30
           AmountMagazines: 6
@@ -66,41 +107,31 @@ MonoBehaviour:
           _serializedList:
           - Key: 1
             Value:
-              AnimationClip: {fileID: 7400000, guid: a1b385c34aa0b054a9e0e41826eb0eeb, type: 3}
+              AnimationClip: {fileID: 7400000, guid: 7b535f5f5793e9741a73a585ed6958e9, type: 3}
               FadeTime: 0.3
               Speed: 1
           - Key: 6
             Value:
-              AnimationClip: {fileID: 7400000, guid: 949e0c69ac83db74fb36acf15c846e09, type: 3}
+              AnimationClip: {fileID: 7400000, guid: 4ea983821bcfe164990415f4600eb2df, type: 3}
               FadeTime: 0.3
               Speed: 1
           - Key: 2
             Value:
-              AnimationClip: {fileID: 7400000, guid: 6813bbaa287e64e488a10aa2d5be071e, type: 3}
+              AnimationClip: {fileID: 7400000, guid: 010baa54eda1d1843a0b4ad94c380cf4, type: 3}
               FadeTime: 0.3
               Speed: 1
           - Key: 3
             Value:
-              AnimationClip: {fileID: 7400000, guid: 4e2a40759043aa44c9c565845697453b, type: 3}
+              AnimationClip: {fileID: 7400000, guid: 41aaba67bbe10cb449c5d2e4f1d03154, type: 3}
               FadeTime: 0.3
               Speed: 1
           - Key: 4
             Value:
-              AnimationClip: {fileID: 7400000, guid: ff78d94eebb40fd408a901cd6f6870b3, type: 3}
+              AnimationClip: {fileID: 7400000, guid: 85917ff2e0158504387ecf1ff8f47b0e, type: 3}
               FadeTime: 0.3
               Speed: 1
           - Key: 5
             Value:
-              AnimationClip: {fileID: 7400000, guid: 7667494cd6910d24fb993ccbc2a16911, type: 3}
+              AnimationClip: {fileID: 7400000, guid: 1dbeca9de17de5244b4c0683dee7b581, type: 3}
               FadeTime: 0.3
               Speed: 1
-    - Key: 1
-      Value:
-        _speedBullet: 800
-        _bulletPrefab: {fileID: 0}
-        _playerWeaponPreset: {fileID: 0}
-        _magazineConfig:
-          MaxAmmoInMagazine: 30
-          AmountMagazines: 6
-        AnimationConfig:
-          _serializedList: []

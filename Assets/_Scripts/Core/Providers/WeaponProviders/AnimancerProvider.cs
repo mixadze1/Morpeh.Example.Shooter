@@ -68,6 +68,7 @@ namespace _Scripts.Core.Providers.WeaponProviders
         Walk,
         Idle,
         Idle_Other,
-        Get
+        Get,
+        EndReload
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Animancer;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Providers;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.Serialization;
 
 namespace _Scripts.Core.Providers.WeaponProviders
 {
+    [RequireComponent(typeof(AnimancerComponent))]
     [RequireComponent(typeof(AnimancerProvider))]
     public class PlayerWeaponProvider : MonoProvider<WeaponComponent>
     {

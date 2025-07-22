@@ -10,9 +10,11 @@ namespace _Scripts.Core.Configs.WeaponConfigs
     [CreateAssetMenu]
     public class WeaponsConfig : ScriptableObject
     {
+        [SerializeField] private float _lifetimeBullet = 5;
         [SerializeField] private SerializedDictionary<TypeWeapon, WeaponConfig> _weapons;
 
         public IReadOnlyDictionary<TypeWeapon, WeaponConfig> Weapons => _weapons;
+        public float LifetimeBullet => _lifetimeBullet;
     }
 
     [Serializable]
@@ -35,6 +37,7 @@ public enum TypeWeapon
 {
     Default,
     Ak,
-    M4,
-    Ar
+    Mk16,
+    Ar,
+    HandGun
 }

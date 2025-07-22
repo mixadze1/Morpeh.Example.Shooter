@@ -3,6 +3,7 @@ using _Scripts.Core.Events;
 using _Scripts.Core.Providers.PlayerProviders;
 using _Scripts.Core.Providers.WeaponProviders;
 using Scellecs.Morpeh;
+using Scellecs.Morpeh.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,7 +15,10 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
         private Filter _filter;
         private Stash<PlayerComponent> _playerStash;
         private Stash<WeaponComponent> _weaponsStash;
+
+        private Event<AnimationEvents> _animationEvents;
         private Event<WeaponEvent> _weaponEvent;
+        
         private readonly WeaponsConfig _weaponsConfig;
 
         public World World { get; set; }
@@ -32,11 +36,40 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             _playerStash = World.GetStash<PlayerComponent>();
 
             _weaponEvent = World.GetEvent<WeaponEvent>();
+            _animationEvents = World.GetEvent<AnimationEvents>();
+            _animationEvents.Subscribe(OnTriggersAnimation);
             _playerInput.OnFoot.Shoot.started += OnShoot;
             _playerInput.OnFoot.Reload.performed += Reload;
         }
 
-        private void Reload(InputAction.CallbackContext obj)
+        private void OnTriggersAnimation(FastList<AnimationEvents> events)
+        {
+            foreach (var e in events)
+            {
+                if (e.Trigger == AnimationTrigger.ReloadEnd)
+                {
+                    CompleteReload();
+                }
+            }
+        }
+
+        private void CompleteReload()
+        {
+            foreach (var playerEntity in _filter)
+            {
+                ref var playerComponent = ref _playerStash.Get(playerEntity);
+                var weaponEntity = playerComponent.WeaponEntity;
+                ref WeaponComponent weaponComponent = ref _weaponsStash.Get(weaponEntity);
+                if (!weaponComponent.TryReload())
+                {
+                    return;
+                }
+
+                weaponComponent.Reload();
+            }
+        }
+
+        private void Reload(InputAction.CallbackContext context)
         {
             foreach (var playerEntity in _filter)
             {
@@ -52,8 +85,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
                     CustomDebug.Log("Can't Reload. Is Empty!", Color.yellow);
                     return;
                 }
-                
-                weaponComponent.Reload();
+            
                 _weaponEvent.NextFrame(new WeaponEvent(Trigger.Reload, weaponEntity));
             }
         }

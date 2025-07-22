@@ -46,7 +46,9 @@ namespace _Scripts.Core
             systemsGroup.AddSystem(new ShowWeaponInteractViewSystem());
             systemsGroup.AddSystem(new PlayerSpawnWeaponSystem(_weaponsConfig));
             systemsGroup.AddSystem(new WeaponShootSystem(_playerInput, _weaponsConfig));
-            systemsGroup.AddSystem(new AnimationSystem());
+            systemsGroup.AddSystem(new AnimationWeaponSystem());
+            systemsGroup.AddSystem(new ViewAmmoSystem());
+            systemsGroup.AddSystem(new InspectWeaponSystem(_playerInput));
 
             this.world.AddSystemsGroup(order: 0, systemsGroup);
         }

@@ -15,7 +15,6 @@ namespace _Scripts.Core.Providers.WeaponProviders
     {
         public void Reset()
         {
-            this.GetComponent<MeshCollider>().convex = true;
             gameObject.layer = 7; 
         }
     }
