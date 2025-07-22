@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a8877f26e7a6a43aaf06fade1a064a, type: 3}
+  m_Name: Humanoid-Flinch
+  m_EditorClassIdentifier: 
+  _Transition:
+    rid: 2481247305373057028
+  references:
+    version: 2
+    RefIds:
+    - rid: 2481247305373057028
+      type: {class: ClipTransition, ns: Animancer, asm: Kybernetik.Animancer}
+      data:
+        _FadeDuration: 0.25
+        _Speed: 1
+        _Events:
+          _NormalizedTimes: []
+          _Callbacks: []
+          _Names: []
+        _Clip: {fileID: 7400000, guid: 5ac398471b904d642a300f937dc5c0ec, type: 2}
+        _NormalizedStartTime: 0
+--- !u!114 &358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a8877f26e7a6a43aaf06fade1a064a, type: 3}
+  m_Name: Humanoid-GolfSwing
+  m_EditorClassIdentifier: 
+  _Transition:
+    rid: 2481247305373057028
+  references:
+    version: 2
+    RefIds:
+    - rid: 2481247305373057028
+      type: {class: ClipTransition, ns: Animancer, asm: Kybernetik.Animancer}
+      data:
+        _FadeDuration: 0.25
+        _Speed: 1
+        _Events:
+          _NormalizedTimes: []
+          _Callbacks: []
+          _Names: []
+        _Clip: {fileID: 7400000, guid: 6b6754727a425b241bd179af348a5153, type: 2}
+        _NormalizedStartTime: 0
+--- !u!114 &360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a8877f26e7a6a43aaf06fade1a064a, type: 3}
+  m_Name: Humanoid-PistolShoot
+  m_EditorClassIdentifier: 
+  _Transition:
+    rid: 2481247305373057028
+  references:
+    version: 2
+    RefIds:
+    - rid: 2481247305373057028
+      type: {class: ClipTransition, ns: Animancer, asm: Kybernetik.Animancer}
+      data:
+        _FadeDuration: 0.25
+        _Speed: 1
+        _Events:
+          _NormalizedTimes: []
+          _Callbacks: []
+          _Names: []
+        _Clip: {fileID: 7400000, guid: c9ffd254c8ebfae4fbe97ac489238d8d, type: 2}
+        _NormalizedStartTime: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f08fdd50e79d0c4bb235a5c2696516d, type: 3}
+  m_Name: Humanoid-AnimationSerialization
+  m_EditorClassIdentifier: 
+  _Definition:
+    _Transitions:
+    - {fileID: 11400000, guid: a7f0583d7b4d49244829b41e1830d1e5, type: 2}
+    - {fileID: 358}
+    - {fileID: 360}
+    - {fileID: 357}
+    _Modifiers: []
+    _Aliases: []
+    _AliasAllTransitions: 0
+--- !u!114 &780576432316908590
+MonoBehaviour:
+  m_ObjectHideFlags: 17
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04d4a67566152e40aaa01b8b745ff6b, type: 3}
+  m_Name: Editor Data
+  m_EditorClassIdentifier: 
+  _Library: {fileID: 11400000}
+  _TransitionSortMode: 0

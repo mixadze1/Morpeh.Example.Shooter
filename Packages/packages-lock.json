@@ -7,6 +7,14 @@
       "dependencies": {},
       "hash": "a33c92ad9b4ce07f2f41d100785c4a3fe6dac60c"
     },
+    "com.kybernetik.animancer": {
+      "version": "file:com.kybernetik.animancer",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.modules.animation": "1.0.0"
+      }
+    },
     "com.scellecs.morpeh": {
       "version": "https://github.com/scellecs/morpeh.git?path=Scellecs.Morpeh",
       "depth": 0,
