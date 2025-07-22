@@ -1,178 +1,506 @@
 fileFormatVersion: 2
 guid: ff78d94eebb40fd408a901cd6f6870b3
-timeCreated: 1582719131
-licenseType: Store
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: Arm_mesh001
-    100002: //RootNode
-    100004: B_Rifle_05_Body
-    100006: B_Rifle_05_Detail_01
-    100008: B_Rifle_05_Detail_02
-    100010: B_Rifle_05_Detail_03
-    100012: B_Rifle_05_Magazine
-    100014: B_Rifle_05_Trigger
-    100016: Camera001
-    100018: Character001
-    100020: Character001Hub001
-    100022: Character001LArm1
-    100024: Character001LArm21
-    100026: Character001LArm22
-    100028: Character001LArmCollarbone
-    100030: Character001LArmDigit11
-    100032: Character001LArmDigit12
-    100034: Character001LArmDigit13
-    100036: Character001LArmDigit21
-    100038: Character001LArmDigit22
-    100040: Character001LArmDigit23
-    100042: Character001LArmDigit31
-    100044: Character001LArmDigit32
-    100046: Character001LArmDigit33
-    100048: Character001LArmDigit41
-    100050: Character001LArmDigit42
-    100052: Character001LArmDigit43
-    100054: Character001LArmDigit51
-    100056: Character001LArmDigit52
-    100058: Character001LArmDigit53
-    100060: Character001LArmIKTarget
-    100062: Character001LArmPalm
-    100064: Character001RArm1
-    100066: Character001RArm21
-    100068: Character001RArm22
-    100070: Character001RArmCollarbone
-    100072: Character001RArmDigit11
-    100074: Character001RArmDigit12
-    100076: Character001RArmDigit13
-    100078: Character001RArmDigit21
-    100080: Character001RArmDigit22
-    100082: Character001RArmDigit23
-    100084: Character001RArmDigit31
-    100086: Character001RArmDigit32
-    100088: Character001RArmDigit33
-    100090: Character001RArmDigit41
-    100092: Character001RArmDigit42
-    100094: Character001RArmDigit43
-    100096: Character001RArmDigit51
-    100098: Character001RArmDigit52
-    100100: Character001RArmDigit53
-    100102: Character001RArmIKTarget
-    100104: Character001RArmPalm
-    100106: Glove_mesh
-    100108: Group_arms
-    100110: P_Rifle_05_Body
-    100112: P_Rifle_05_Detail_01
-    100114: P_Rifle_05_Detail_02
-    100116: P_Rifle_05_Detail_03
-    100118: P_Rifle_05_Magazine
-    100120: P_Rifle_05_Trigger
-    100122: Rectangle001
-    100124: Rifle_05_Body_Mesh
-    100126: Rifle_05_Detail_01_Mesh
-    100128: Rifle_05_Detail_02_Mesh
-    100130: Rifle_05_Glasses_Mesh
-    100132: Rifle_05_Magazine_Mesh
-    100134: Rifle_05_Muffler_Mesh
-    100136: Rifle_05_Sigh_Mesh
-    100138: Rifle_05_Trigger_Mesh
-    400000: Arm_mesh001
-    400002: //RootNode
-    400004: B_Rifle_05_Body
-    400006: B_Rifle_05_Detail_01
-    400008: B_Rifle_05_Detail_02
-    400010: B_Rifle_05_Detail_03
-    400012: B_Rifle_05_Magazine
-    400014: B_Rifle_05_Trigger
-    400016: Camera001
-    400018: Character001
-    400020: Character001Hub001
-    400022: Character001LArm1
-    400024: Character001LArm21
-    400026: Character001LArm22
-    400028: Character001LArmCollarbone
-    400030: Character001LArmDigit11
-    400032: Character001LArmDigit12
-    400034: Character001LArmDigit13
-    400036: Character001LArmDigit21
-    400038: Character001LArmDigit22
-    400040: Character001LArmDigit23
-    400042: Character001LArmDigit31
-    400044: Character001LArmDigit32
-    400046: Character001LArmDigit33
-    400048: Character001LArmDigit41
-    400050: Character001LArmDigit42
-    400052: Character001LArmDigit43
-    400054: Character001LArmDigit51
-    400056: Character001LArmDigit52
-    400058: Character001LArmDigit53
-    400060: Character001LArmIKTarget
-    400062: Character001LArmPalm
-    400064: Character001RArm1
-    400066: Character001RArm21
-    400068: Character001RArm22
-    400070: Character001RArmCollarbone
-    400072: Character001RArmDigit11
-    400074: Character001RArmDigit12
-    400076: Character001RArmDigit13
-    400078: Character001RArmDigit21
-    400080: Character001RArmDigit22
-    400082: Character001RArmDigit23
-    400084: Character001RArmDigit31
-    400086: Character001RArmDigit32
-    400088: Character001RArmDigit33
-    400090: Character001RArmDigit41
-    400092: Character001RArmDigit42
-    400094: Character001RArmDigit43
-    400096: Character001RArmDigit51
-    400098: Character001RArmDigit52
-    400100: Character001RArmDigit53
-    400102: Character001RArmIKTarget
-    400104: Character001RArmPalm
-    400106: Glove_mesh
-    400108: Group_arms
-    400110: P_Rifle_05_Body
-    400112: P_Rifle_05_Detail_01
-    400114: P_Rifle_05_Detail_02
-    400116: P_Rifle_05_Detail_03
-    400118: P_Rifle_05_Magazine
-    400120: P_Rifle_05_Trigger
-    400122: Rectangle001
-    400124: Rifle_05_Body_Mesh
-    400126: Rifle_05_Detail_01_Mesh
-    400128: Rifle_05_Detail_02_Mesh
-    400130: Rifle_05_Glasses_Mesh
-    400132: Rifle_05_Magazine_Mesh
-    400134: Rifle_05_Muffler_Mesh
-    400136: Rifle_05_Sigh_Mesh
-    400138: Rifle_05_Trigger_Mesh
-    2000000: Camera001
-    2100000: 09 - Default
-    2100002: Rifle
-    4300000: Arm_mesh001
-    4300002: Glove_mesh
-    4300004: Rifle_05_Trigger_Mesh
-    4300006: Rifle_05_Muffler_Mesh
-    4300008: Rifle_05_Detail_01_Mesh
-    4300010: Rifle_05_Glasses_Mesh
-    4300012: Rifle_05_Magazine_Mesh
-    4300014: Rifle_05_Detail_02_Mesh
-    4300016: Rifle_05_Body_Mesh
-    4300018: Rifle_05_Sigh_Mesh
-    7400000: Take 001
-    9500000: //RootNode
-    13700000: Arm_mesh001
-    13700002: Glove_mesh
-    13700004: Rifle_05_Body_Mesh
-    13700006: Rifle_05_Detail_01_Mesh
-    13700008: Rifle_05_Detail_02_Mesh
-    13700010: Rifle_05_Glasses_Mesh
-    13700012: Rifle_05_Magazine_Mesh
-    13700014: Rifle_05_Muffler_Mesh
-    13700016: Rifle_05_Sigh_Mesh
-    13700018: Rifle_05_Trigger_Mesh
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Arm_mesh001
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: B_Rifle_05_Body
+  - first:
+      1: 100006
+    second: B_Rifle_05_Detail_01
+  - first:
+      1: 100008
+    second: B_Rifle_05_Detail_02
+  - first:
+      1: 100010
+    second: B_Rifle_05_Detail_03
+  - first:
+      1: 100012
+    second: B_Rifle_05_Magazine
+  - first:
+      1: 100014
+    second: B_Rifle_05_Trigger
+  - first:
+      1: 100016
+    second: Camera001
+  - first:
+      1: 100018
+    second: Character001
+  - first:
+      1: 100020
+    second: Character001Hub001
+  - first:
+      1: 100022
+    second: Character001LArm1
+  - first:
+      1: 100024
+    second: Character001LArm21
+  - first:
+      1: 100026
+    second: Character001LArm22
+  - first:
+      1: 100028
+    second: Character001LArmCollarbone
+  - first:
+      1: 100030
+    second: Character001LArmDigit11
+  - first:
+      1: 100032
+    second: Character001LArmDigit12
+  - first:
+      1: 100034
+    second: Character001LArmDigit13
+  - first:
+      1: 100036
+    second: Character001LArmDigit21
+  - first:
+      1: 100038
+    second: Character001LArmDigit22
+  - first:
+      1: 100040
+    second: Character001LArmDigit23
+  - first:
+      1: 100042
+    second: Character001LArmDigit31
+  - first:
+      1: 100044
+    second: Character001LArmDigit32
+  - first:
+      1: 100046
+    second: Character001LArmDigit33
+  - first:
+      1: 100048
+    second: Character001LArmDigit41
+  - first:
+      1: 100050
+    second: Character001LArmDigit42
+  - first:
+      1: 100052
+    second: Character001LArmDigit43
+  - first:
+      1: 100054
+    second: Character001LArmDigit51
+  - first:
+      1: 100056
+    second: Character001LArmDigit52
+  - first:
+      1: 100058
+    second: Character001LArmDigit53
+  - first:
+      1: 100060
+    second: Character001LArmIKTarget
+  - first:
+      1: 100062
+    second: Character001LArmPalm
+  - first:
+      1: 100064
+    second: Character001RArm1
+  - first:
+      1: 100066
+    second: Character001RArm21
+  - first:
+      1: 100068
+    second: Character001RArm22
+  - first:
+      1: 100070
+    second: Character001RArmCollarbone
+  - first:
+      1: 100072
+    second: Character001RArmDigit11
+  - first:
+      1: 100074
+    second: Character001RArmDigit12
+  - first:
+      1: 100076
+    second: Character001RArmDigit13
+  - first:
+      1: 100078
+    second: Character001RArmDigit21
+  - first:
+      1: 100080
+    second: Character001RArmDigit22
+  - first:
+      1: 100082
+    second: Character001RArmDigit23
+  - first:
+      1: 100084
+    second: Character001RArmDigit31
+  - first:
+      1: 100086
+    second: Character001RArmDigit32
+  - first:
+      1: 100088
+    second: Character001RArmDigit33
+  - first:
+      1: 100090
+    second: Character001RArmDigit41
+  - first:
+      1: 100092
+    second: Character001RArmDigit42
+  - first:
+      1: 100094
+    second: Character001RArmDigit43
+  - first:
+      1: 100096
+    second: Character001RArmDigit51
+  - first:
+      1: 100098
+    second: Character001RArmDigit52
+  - first:
+      1: 100100
+    second: Character001RArmDigit53
+  - first:
+      1: 100102
+    second: Character001RArmIKTarget
+  - first:
+      1: 100104
+    second: Character001RArmPalm
+  - first:
+      1: 100106
+    second: Glove_mesh
+  - first:
+      1: 100108
+    second: Group_arms
+  - first:
+      1: 100110
+    second: P_Rifle_05_Body
+  - first:
+      1: 100112
+    second: P_Rifle_05_Detail_01
+  - first:
+      1: 100114
+    second: P_Rifle_05_Detail_02
+  - first:
+      1: 100116
+    second: P_Rifle_05_Detail_03
+  - first:
+      1: 100118
+    second: P_Rifle_05_Magazine
+  - first:
+      1: 100120
+    second: P_Rifle_05_Trigger
+  - first:
+      1: 100122
+    second: Rectangle001
+  - first:
+      1: 100124
+    second: Rifle_05_Body_Mesh
+  - first:
+      1: 100126
+    second: Rifle_05_Detail_01_Mesh
+  - first:
+      1: 100128
+    second: Rifle_05_Detail_02_Mesh
+  - first:
+      1: 100130
+    second: Rifle_05_Glasses_Mesh
+  - first:
+      1: 100132
+    second: Rifle_05_Magazine_Mesh
+  - first:
+      1: 100134
+    second: Rifle_05_Muffler_Mesh
+  - first:
+      1: 100136
+    second: Rifle_05_Sigh_Mesh
+  - first:
+      1: 100138
+    second: Rifle_05_Trigger_Mesh
+  - first:
+      4: 400000
+    second: Arm_mesh001
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      4: 400004
+    second: B_Rifle_05_Body
+  - first:
+      4: 400006
+    second: B_Rifle_05_Detail_01
+  - first:
+      4: 400008
+    second: B_Rifle_05_Detail_02
+  - first:
+      4: 400010
+    second: B_Rifle_05_Detail_03
+  - first:
+      4: 400012
+    second: B_Rifle_05_Magazine
+  - first:
+      4: 400014
+    second: B_Rifle_05_Trigger
+  - first:
+      4: 400016
+    second: Camera001
+  - first:
+      4: 400018
+    second: Character001
+  - first:
+      4: 400020
+    second: Character001Hub001
+  - first:
+      4: 400022
+    second: Character001LArm1
+  - first:
+      4: 400024
+    second: Character001LArm21
+  - first:
+      4: 400026
+    second: Character001LArm22
+  - first:
+      4: 400028
+    second: Character001LArmCollarbone
+  - first:
+      4: 400030
+    second: Character001LArmDigit11
+  - first:
+      4: 400032
+    second: Character001LArmDigit12
+  - first:
+      4: 400034
+    second: Character001LArmDigit13
+  - first:
+      4: 400036
+    second: Character001LArmDigit21
+  - first:
+      4: 400038
+    second: Character001LArmDigit22
+  - first:
+      4: 400040
+    second: Character001LArmDigit23
+  - first:
+      4: 400042
+    second: Character001LArmDigit31
+  - first:
+      4: 400044
+    second: Character001LArmDigit32
+  - first:
+      4: 400046
+    second: Character001LArmDigit33
+  - first:
+      4: 400048
+    second: Character001LArmDigit41
+  - first:
+      4: 400050
+    second: Character001LArmDigit42
+  - first:
+      4: 400052
+    second: Character001LArmDigit43
+  - first:
+      4: 400054
+    second: Character001LArmDigit51
+  - first:
+      4: 400056
+    second: Character001LArmDigit52
+  - first:
+      4: 400058
+    second: Character001LArmDigit53
+  - first:
+      4: 400060
+    second: Character001LArmIKTarget
+  - first:
+      4: 400062
+    second: Character001LArmPalm
+  - first:
+      4: 400064
+    second: Character001RArm1
+  - first:
+      4: 400066
+    second: Character001RArm21
+  - first:
+      4: 400068
+    second: Character001RArm22
+  - first:
+      4: 400070
+    second: Character001RArmCollarbone
+  - first:
+      4: 400072
+    second: Character001RArmDigit11
+  - first:
+      4: 400074
+    second: Character001RArmDigit12
+  - first:
+      4: 400076
+    second: Character001RArmDigit13
+  - first:
+      4: 400078
+    second: Character001RArmDigit21
+  - first:
+      4: 400080
+    second: Character001RArmDigit22
+  - first:
+      4: 400082
+    second: Character001RArmDigit23
+  - first:
+      4: 400084
+    second: Character001RArmDigit31
+  - first:
+      4: 400086
+    second: Character001RArmDigit32
+  - first:
+      4: 400088
+    second: Character001RArmDigit33
+  - first:
+      4: 400090
+    second: Character001RArmDigit41
+  - first:
+      4: 400092
+    second: Character001RArmDigit42
+  - first:
+      4: 400094
+    second: Character001RArmDigit43
+  - first:
+      4: 400096
+    second: Character001RArmDigit51
+  - first:
+      4: 400098
+    second: Character001RArmDigit52
+  - first:
+      4: 400100
+    second: Character001RArmDigit53
+  - first:
+      4: 400102
+    second: Character001RArmIKTarget
+  - first:
+      4: 400104
+    second: Character001RArmPalm
+  - first:
+      4: 400106
+    second: Glove_mesh
+  - first:
+      4: 400108
+    second: Group_arms
+  - first:
+      4: 400110
+    second: P_Rifle_05_Body
+  - first:
+      4: 400112
+    second: P_Rifle_05_Detail_01
+  - first:
+      4: 400114
+    second: P_Rifle_05_Detail_02
+  - first:
+      4: 400116
+    second: P_Rifle_05_Detail_03
+  - first:
+      4: 400118
+    second: P_Rifle_05_Magazine
+  - first:
+      4: 400120
+    second: P_Rifle_05_Trigger
+  - first:
+      4: 400122
+    second: Rectangle001
+  - first:
+      4: 400124
+    second: Rifle_05_Body_Mesh
+  - first:
+      4: 400126
+    second: Rifle_05_Detail_01_Mesh
+  - first:
+      4: 400128
+    second: Rifle_05_Detail_02_Mesh
+  - first:
+      4: 400130
+    second: Rifle_05_Glasses_Mesh
+  - first:
+      4: 400132
+    second: Rifle_05_Magazine_Mesh
+  - first:
+      4: 400134
+    second: Rifle_05_Muffler_Mesh
+  - first:
+      4: 400136
+    second: Rifle_05_Sigh_Mesh
+  - first:
+      4: 400138
+    second: Rifle_05_Trigger_Mesh
+  - first:
+      20: 2000000
+    second: Camera001
+  - first:
+      21: 2100000
+    second: 09 - Default
+  - first:
+      21: 2100002
+    second: Rifle
+  - first:
+      43: 4300000
+    second: Arm_mesh001
+  - first:
+      43: 4300002
+    second: Glove_mesh
+  - first:
+      43: 4300004
+    second: Rifle_05_Trigger_Mesh
+  - first:
+      43: 4300006
+    second: Rifle_05_Muffler_Mesh
+  - first:
+      43: 4300008
+    second: Rifle_05_Detail_01_Mesh
+  - first:
+      43: 4300010
+    second: Rifle_05_Glasses_Mesh
+  - first:
+      43: 4300012
+    second: Rifle_05_Magazine_Mesh
+  - first:
+      43: 4300014
+    second: Rifle_05_Detail_02_Mesh
+  - first:
+      43: 4300016
+    second: Rifle_05_Body_Mesh
+  - first:
+      43: 4300018
+    second: Rifle_05_Sigh_Mesh
+  - first:
+      74: 7400000
+    second: Idle
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Arm_mesh001
+  - first:
+      137: 13700002
+    second: Glove_mesh
+  - first:
+      137: 13700004
+    second: Rifle_05_Body_Mesh
+  - first:
+      137: 13700006
+    second: Rifle_05_Detail_01_Mesh
+  - first:
+      137: 13700008
+    second: Rifle_05_Detail_02_Mesh
+  - first:
+      137: 13700010
+    second: Rifle_05_Glasses_Mesh
+  - first:
+      137: 13700012
+    second: Rifle_05_Magazine_Mesh
+  - first:
+      137: 13700014
+    second: Rifle_05_Muffler_Mesh
+  - first:
+      137: 13700016
+    second: Rifle_05_Sigh_Mesh
+  - first:
+      137: 13700018
+    second: Rifle_05_Trigger_Mesh
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -181,6 +509,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -189,6 +518,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -196,39 +526,85 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      internalID: 7400000
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -238,14 +614,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

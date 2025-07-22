@@ -65,22 +65,16 @@ namespace _Scripts.Core.Systems.PlayerInteractSystems
             }
         }
 
-        private void GetOriginAndDirection(ref PlayerCameraComponent cameraComponent, out Vector3 origin, out Vector3 direction)
-        {
-            var cameraTransform = cameraComponent.VirtualCamera.transform;
-            origin = cameraTransform.position;
-            direction = cameraTransform.forward;
-        }
-
         private void OnClick(InputAction.CallbackContext obj)
         {
+            CustomDebug.Log("[Player] Click E", Color.white);
             if (TryInteract(out Entity entity))
             {
                 _eventClick.NextFrame(new PlayerClickInteractedEvent(entity));
                 CustomDebug.Log($"[Player] Interact item {entity.Id}", Color.white);
             }
         }
-        
+
         private bool TryInteract(out Entity entity)
         {
             entity = default;
@@ -89,7 +83,6 @@ namespace _Scripts.Core.Systems.PlayerInteractSystems
             {
                 ref var cameraComponent = ref _playerCameraStash.Get(player);
                 GetOriginAndDirection(ref cameraComponent, out Vector3 origin, out Vector3 direction);
-                var distance = _playerInteractConfig.InteractDistance;
                 Debug.DrawRay(origin, direction * _playerInteractConfig.InteractDistance, Color.yellow);
                 if (Physics.Raycast(origin, direction, out var hit, _playerInteractConfig.InteractDistance,
                         _playerInteractConfig.InteractLayerMask))
@@ -107,6 +100,13 @@ namespace _Scripts.Core.Systems.PlayerInteractSystems
             }
 
             return false; 
+        }
+
+        private void GetOriginAndDirection(ref PlayerCameraComponent cameraComponent, out Vector3 origin, out Vector3 direction)
+        {
+            var cameraTransform = cameraComponent.VirtualCamera.transform;
+            origin = cameraTransform.position;
+            direction = cameraTransform.forward;
         }
 
         public void Dispose()
