@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 663786661}
   - component: {fileID: 663786660}
   - component: {fileID: 663786663}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1742,6 +1742,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4115215704343149765, guid: a706cf47ccbc50d4585bfca30682d090, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -11.899902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115215704343149765, guid: a706cf47ccbc50d4585bfca30682d090, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 42.69995
+      objectReference: {fileID: 0}
     - target: {fileID: 7289203902656906075, guid: a706cf47ccbc50d4585bfca30682d090, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1753,6 +1761,10 @@ PrefabInstance:
     - target: {fileID: 8156413602041589014, guid: a706cf47ccbc50d4585bfca30682d090, type: 3}
       propertyPath: m_Name
       value: ViewWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064835029511054673, guid: a706cf47ccbc50d4585bfca30682d090, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50.399902
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

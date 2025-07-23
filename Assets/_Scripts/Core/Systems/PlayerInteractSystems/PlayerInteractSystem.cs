@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 
 namespace _Scripts.Core.Systems.PlayerInteractSystems
 {
-    public class PlayerInteractSystem : ISystem
+    public sealed class PlayerInteractSystem : ISystem
     {
         private readonly PlayerInteractConfig _playerInteractConfig;
         private Stash<InteractComponent> _interactStash;

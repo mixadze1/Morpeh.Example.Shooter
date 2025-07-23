@@ -6,7 +6,7 @@ using Scellecs.Morpeh.Collections;
 
 namespace _Scripts.Core.Systems.UI
 {
-    public class ShowWeaponInteractViewSystem : ISystem
+    public sealed class ShowWeaponInteractViewSystem : ISystem
     {
         private Stash<WeaponInteractComponent> _interactWeaponStash;
         private Stash<ShowInteractViewComponent> _viewInteractStash;

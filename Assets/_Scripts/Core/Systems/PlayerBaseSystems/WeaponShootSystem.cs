@@ -6,10 +6,11 @@ using Scellecs.Morpeh;
 using Scellecs.Morpeh.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 namespace _Scripts.Core.Systems.PlayerBaseSystems
 {
-    public class WeaponShootSystem : ISystem
+    public sealed class WeaponShootSystem : ISystem
     {
         private readonly PlayerInput _playerInput;
         private Filter _filter;
@@ -20,6 +21,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
         private Event<WeaponEvent> _weaponEvent;
         
         private readonly WeaponsConfig _weaponsConfig;
+        private readonly Dictionary<Entity, float> _lastShootTimes = new();
 
         public World World { get; set; }
 
@@ -61,9 +63,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
                 var weaponEntity = playerComponent.WeaponEntity;
                 ref WeaponComponent weaponComponent = ref _weaponsStash.Get(weaponEntity);
                 if (!weaponComponent.TryReload())
-                {
                     return;
-                }
 
                 weaponComponent.Reload();
             }
@@ -109,13 +109,23 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
                     continue;
                 }
 
+                float shootDelay = config.ShootPerSecond;
+                float currentTime = Time.time;
+                _lastShootTimes.TryGetValue(weaponEntity, out var lastShootTime);
+
+                Debug.Log($"Delay: {currentTime} - {lastShootTime} < {shootDelay}");
+                if (currentTime - lastShootTime < shootDelay)
+                    continue;
+
                 if (!weaponComponent.TryShoot())
                 {
                     CustomDebug.Log("Is Empty! Try Reload [R]!", Color.yellow);
-                    return;    
+                    return;
                 }
-                
+
                 Shoot(ref weaponComponent, config);
+                _lastShootTimes[weaponEntity] = currentTime;
+
                 _weaponEvent.NextFrame(new WeaponEvent(Trigger.Shoot, weaponEntity));
             }
         }
@@ -131,7 +141,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             return false;
         }
 
-        private static void Shoot(ref WeaponComponent weaponComponent, WeaponConfig config)
+        private void Shoot(ref WeaponComponent weaponComponent, WeaponConfig config)
         {
             weaponComponent.OnShoot();
             var shootPoint = weaponComponent.ShootPoint;
@@ -144,19 +154,20 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
                 return;
             }
 
-            var bullet = Object.Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
-
-            if (bullet.TryGetComponent<Rigidbody>(out var rb))
+            var instanceBullet = Object.Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
+            ref var bulletComponent = ref instanceBullet.GetData();
+            bulletComponent.Lifetime = _weaponsConfig.LifetimeBullet;
+            bulletComponent.WeaponType = weaponComponent.TypeWeapon;
+            
+            if (instanceBullet.TryGetComponent<Rigidbody>(out var rb))
             {
                 var direction = shootPoint.forward.normalized;
                 rb.velocity = direction * speed;
+                instanceBullet.transform.rotation = Quaternion.LookRotation(rb.velocity);
             }
-            bullet.transform.rotation = Quaternion.LookRotation(rb.velocity);
         }
 
-        public void OnUpdate(float deltaTime)
-        {
-        }
+        public void OnUpdate(float deltaTime) { }
 
         public void Dispose()
         {

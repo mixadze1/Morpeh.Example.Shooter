@@ -1,6 +1,7 @@
 using _Scripts.Core.Configs;
 using _Scripts.Core.Configs.WeaponConfigs;
 using _Scripts.Core.Systems;
+using _Scripts.Core.Systems.Bullets;
 using _Scripts.Core.Systems.PlayerBaseSystems;
 using _Scripts.Core.Systems.PlayerInteractSystems;
 using _Scripts.Core.Systems.UI;
@@ -13,7 +14,7 @@ namespace _Scripts.Core
     public class Startup : MonoBehaviour
     {
         [SerializeField] private float _time;
-        private World world;
+        private World _world;
         private HealthConfig _healthConfig;
         private CameraConfig _cameraConfig;
         private MovementConfig _movementConfig;
@@ -34,10 +35,10 @@ namespace _Scripts.Core
         }
         
         private void Start() {
-            this.world = World.Default;
+            this._world = World.Default;
 
             Time.timeScale = _time;
-            var systemsGroup = this.world.CreateSystemsGroup();
+            var systemsGroup = _world.CreateSystemsGroup();
             
             systemsGroup.AddSystem(new HealthSystem(_healthConfig));
             systemsGroup.AddSystem(new PlayerMovementSystem(_movementConfig, _playerInput));
@@ -49,8 +50,10 @@ namespace _Scripts.Core
             systemsGroup.AddSystem(new AnimationWeaponSystem());
             systemsGroup.AddSystem(new ViewAmmoSystem());
             systemsGroup.AddSystem(new InspectWeaponSystem(_playerInput));
+            systemsGroup.AddSystem(new BulletSystem(_weaponsConfig));
+            systemsGroup.AddSystem(new DecalBulletSystem());
 
-            this.world.AddSystemsGroup(order: 0, systemsGroup);
+            this._world.AddSystemsGroup(order: 0, systemsGroup);
         }
     }
 }

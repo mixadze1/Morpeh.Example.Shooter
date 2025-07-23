@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace _Scripts.Core.Systems.PlayerBaseSystems
 {
-    public class PlayerSpawnWeaponSystem : ISystem
+    public sealed class PlayerSpawnWeaponSystem : ISystem
     {
         private readonly WeaponsConfig _weaponsConfig;
 

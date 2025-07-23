@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Scripts.Core.Providers.PlayerProviders;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Providers;
 using Sirenix.OdinInspector;
@@ -7,6 +8,9 @@ using UnityEngine;
 
 namespace _Scripts.Core.Providers.WeaponProviders
 {
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(BoxCollider))]
+    [RequireComponent(typeof(TransformProvider))]
     public class BulletProvider : MonoProvider<BulletComponent>
     {
         #if UNITY_EDITOR
@@ -48,6 +52,8 @@ namespace _Scripts.Core.Providers.WeaponProviders
 
     public struct BulletComponent : IComponent
     {
-        [ReadOnly] public Vector3 Direction;
+       [ReadOnly] public float Lifetime;
+       [ReadOnly]  public float TimeAlive;
+       [ReadOnly]  public TypeWeapon WeaponType;
     }
 }

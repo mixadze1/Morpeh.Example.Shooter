@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 namespace _Scripts.Core.Systems.PlayerBaseSystems
 {
-    public class InspectWeaponSystem : ISystem
+    public sealed class InspectWeaponSystem : ISystem
     {
         private readonly PlayerInput _playerInput;
         private Filter _filter;

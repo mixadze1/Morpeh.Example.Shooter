@@ -6,7 +6,7 @@ using Scellecs.Morpeh.Collections;
 
 namespace _Scripts.Core.Systems.PlayerBaseSystems
 {
-    public class ViewAmmoSystem : ISystem
+    public sealed class ViewAmmoSystem : ISystem
     {
         private Filter _filter;
         private Stash<WeaponComponent> _weaponStash;

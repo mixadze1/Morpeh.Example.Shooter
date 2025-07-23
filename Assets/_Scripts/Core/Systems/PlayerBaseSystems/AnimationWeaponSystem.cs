@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace _Scripts.Core.Systems.PlayerBaseSystems
 {
-    public class AnimationWeaponSystem : ISystem
+    public sealed class AnimationWeaponSystem : ISystem
     {
         private Filter _filter;
         private Stash<AnimancerCustomComponent> _animancerStash;
