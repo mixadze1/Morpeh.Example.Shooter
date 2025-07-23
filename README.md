@@ -1,4 +1,4 @@
-# 🔫 First Person Shooter – ECS Morpeh Example
+# First Person Shooter – ECS Morpeh Example
 
 This is a Unity FPS project demonstrating the use of the [Morpeh ECS framework](https://github.com/scellecs/morpeh) to build scalable and modular shooter systems using data-driven architecture.
 
