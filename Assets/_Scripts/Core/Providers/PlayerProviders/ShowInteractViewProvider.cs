@@ -1,10 +1,8 @@
 ﻿using System;
-using _Scripts.Core.Systems.PlayerBaseSystems;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Providers;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Scripts.Core.Providers.PlayerProviders
 {

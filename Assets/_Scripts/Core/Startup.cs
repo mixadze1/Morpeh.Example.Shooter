@@ -1,6 +1,5 @@
 using _Scripts.Core.Configs;
 using _Scripts.Core.Configs.WeaponConfigs;
-using _Scripts.Core.Systems;
 using _Scripts.Core.Systems.Bullets;
 using _Scripts.Core.Systems.PlayerBaseSystems;
 using _Scripts.Core.Systems.PlayerInteractSystems;
@@ -15,7 +14,6 @@ namespace _Scripts.Core
     {
         [SerializeField] private float _time;
         private World _world;
-        private HealthConfig _healthConfig;
         private CameraConfig _cameraConfig;
         private MovementConfig _movementConfig;
         private PlayerInput _playerInput;
@@ -23,7 +21,7 @@ namespace _Scripts.Core
         private WeaponsConfig _weaponsConfig;
 
         [Inject]
-        public void Construct(PlayerInput input, HealthConfig healthConfig, CameraConfig cameraConfig, MovementConfig movementConfig,
+        public void Construct(PlayerInput input, CameraConfig cameraConfig, MovementConfig movementConfig,
             PlayerInteractConfig playerInteractConfig, WeaponsConfig weaponsConfig)
         {
             _weaponsConfig = weaponsConfig;
@@ -31,7 +29,6 @@ namespace _Scripts.Core
             _playerInput = input;
             _movementConfig = movementConfig;
             _cameraConfig = cameraConfig;
-            _healthConfig = healthConfig;
         }
         
         private void Start() {
@@ -40,7 +37,6 @@ namespace _Scripts.Core
             Time.timeScale = _time;
             var systemsGroup = _world.CreateSystemsGroup();
             
-            systemsGroup.AddSystem(new HealthSystem(_healthConfig));
             systemsGroup.AddSystem(new PlayerMovementSystem(_movementConfig, _playerInput));
             systemsGroup.AddSystem(new PlayerLookSystem(_cameraConfig, _playerInput));
             systemsGroup.AddSystem(new PlayerInteractSystem(_playerInteractConfig, _playerInput));

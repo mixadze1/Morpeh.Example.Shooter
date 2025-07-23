@@ -16,6 +16,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
         private Filter _filter;
         private Stash<PlayerComponent> _playerStash;
         private Stash<WeaponComponent> _weaponsStash;
+        private Stash<RigidbodyComponent> _rigidbodyStash;
 
         private Event<AnimationEvents> _animationEvents;
         private Event<WeaponEvent> _weaponEvent;
@@ -36,6 +37,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             _filter = World.Filter.With<PlayerComponent>().Build();
             _weaponsStash = World.GetStash<WeaponComponent>();
             _playerStash = World.GetStash<PlayerComponent>();
+            _rigidbodyStash = World.GetStash<RigidbodyComponent>();
 
             _weaponEvent = World.GetEvent<WeaponEvent>();
             _animationEvents = World.GetEvent<AnimationEvents>();
@@ -132,7 +134,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
 
         private bool WeaponIsNotExist(Entity weaponEntity)
         {
-            if (weaponEntity.IsNullOrDisposed() || !_weaponsStash.Has(weaponEntity))
+            if (World.IsDisposed(weaponEntity) || !_weaponsStash.Has(weaponEntity))
             {
                 CustomDebug.Log("Weapon entity has no PlayerWeaponComponent. Maybe no have Weapon!", Color.yellow);
                 return true;
@@ -158,13 +160,13 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             ref var bulletComponent = ref instanceBullet.GetData();
             bulletComponent.Lifetime = _weaponsConfig.LifetimeBullet;
             bulletComponent.WeaponType = weaponComponent.TypeWeapon;
-            
-            if (instanceBullet.TryGetComponent<Rigidbody>(out var rb))
-            {
-                var direction = shootPoint.forward.normalized;
-                rb.velocity = direction * speed;
-                instanceBullet.transform.rotation = Quaternion.LookRotation(rb.velocity);
-            }
+
+            ref var rigidbodyComponent = ref _rigidbodyStash.Get(instanceBullet.Entity);
+            var rb = rigidbodyComponent.Rigidbody;
+
+            var direction = shootPoint.forward.normalized;
+            rb.velocity = direction * speed;
+            instanceBullet.transform.rotation = Quaternion.LookRotation(rb.velocity);
         }
 
         public void OnUpdate(float deltaTime) { }

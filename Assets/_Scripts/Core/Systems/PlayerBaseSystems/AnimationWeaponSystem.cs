@@ -10,9 +10,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
 {
     public sealed class AnimationWeaponSystem : ISystem
     {
-        private Filter _filter;
         private Stash<AnimancerCustomComponent> _animancerStash;
-        private Stash<PlayerComponent> _playerStash;
         private Event<WeaponEvent> _weaponEvents;
         private Event<AnimationEvents> _animationEvents;
         private Event<PlayerSpawnWeaponEvent> _spawnWeapon;
@@ -20,9 +18,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
 
         public void OnAwake()
         {
-            _filter = World.Filter.With<PlayerComponent>().Build();
             _animancerStash = World.GetStash<AnimancerCustomComponent>();
-            _playerStash = World.GetStash<PlayerComponent>();
             
            _weaponEvents = World.GetEvent<WeaponEvent>();
            _weaponEvents.Subscribe(OnTrigger);

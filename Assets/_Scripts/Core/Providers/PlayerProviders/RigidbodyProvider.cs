@@ -14,6 +14,5 @@ namespace _Scripts.Core.Providers.PlayerProviders
     public struct RigidbodyComponent : IComponent
     {
         public Rigidbody Rigidbody;
-        public Vector3 Direction;
     }
 }

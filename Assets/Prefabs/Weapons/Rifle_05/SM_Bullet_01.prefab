@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 3474156974827805769}
   - component: {fileID: 5653107590799781487}
   - component: {fileID: 4293903185658264695}
+  - component: {fileID: 3286295452546802464}
   m_Layer: 0
   m_Name: SM_Bullet_01
   m_TagString: Untagged
@@ -193,3 +194,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.071906134, y: 0.05176185, z: 0.3219093}
   m_Center: {x: 0.000000052154064, y: -0.0002441518, z: -0.0003049299}
+--- !u!114 &3286295452546802464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274368834973721704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41cb605b60e4513a85431aa1673b943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializedData:
+    Rigidbody: {fileID: 3474156974827805769}

@@ -2,7 +2,6 @@
 using _Scripts.Core.Providers.PlayerProviders;
 using _Scripts.Core.Providers.WeaponProviders;
 using Scellecs.Morpeh;
-using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace _Scripts.Core.Systems.PlayerBaseSystems
@@ -37,7 +36,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             foreach (var e in _filter)
             {
                 ref var playerComponent = ref _playerStash.Get(e);
-                if (playerComponent.WeaponEntity.IsNullOrDisposed())
+                if (World.IsDisposed(playerComponent.WeaponEntity))
                 {
                     CustomDebug.Log($"Not find current weapon! Maybe is empty!");
                     continue;

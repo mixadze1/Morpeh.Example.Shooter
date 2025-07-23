@@ -1,27 +1,30 @@
 ﻿using UnityEngine;
 
-public static class CustomDebug
+namespace _Scripts.Core
 {
-    public static void Log(string message)
+    public static class CustomDebug
     {
-#if UNITY_EDITOR || DEV_VERSION
-        Debug.Log(message);
-#endif
-    }
-
-    public static void Log(string message, Color color, bool isLogDevice = false)
-    {
-#if UNITY_EDITOR || DEV_VERSION
-        if (!isLogDevice)
+        public static void Log(string message)
         {
-            string colorHex = ColorUtility.ToHtmlStringRGB(color);
-            Debug.Log($"<color=#{colorHex}> {message}</color>"); 
+#if UNITY_EDITOR || DEV_VERSION
+            Debug.Log(message);
+#endif
         }
-#endif
-        if (isLogDevice)
+
+        public static void Log(string message, Color color, bool isLogDevice = false)
         {
-            string colorHex = ColorUtility.ToHtmlStringRGB(color);
-            Debug.Log($"<color=#{colorHex}> {message}</color>");
+#if UNITY_EDITOR || DEV_VERSION
+            if (!isLogDevice)
+            {
+                string colorHex = ColorUtility.ToHtmlStringRGB(color);
+                Debug.Log($"<color=#{colorHex}> {message}</color>"); 
+            }
+#endif
+            if (isLogDevice)
+            {
+                string colorHex = ColorUtility.ToHtmlStringRGB(color);
+                Debug.Log($"<color=#{colorHex}> {message}</color>");
+            }
         }
     }
 }

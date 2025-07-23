@@ -1,6 +1,5 @@
 ﻿using _Scripts.Core.Configs;
 using _Scripts.Core.Events;
-using _Scripts.Core.Providers;
 using _Scripts.Core.Providers.PlayerProviders;
 using Scellecs.Morpeh;
 using UnityEngine;

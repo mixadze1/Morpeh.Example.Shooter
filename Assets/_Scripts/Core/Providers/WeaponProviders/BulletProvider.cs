@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using _Scripts.Core.Providers.PlayerProviders;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Providers;
@@ -11,6 +10,7 @@ namespace _Scripts.Core.Providers.WeaponProviders
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(BoxCollider))]
     [RequireComponent(typeof(TransformProvider))]
+    [RequireComponent(typeof(RigidbodyComponent))]
     public class BulletProvider : MonoProvider<BulletComponent>
     {
         #if UNITY_EDITOR

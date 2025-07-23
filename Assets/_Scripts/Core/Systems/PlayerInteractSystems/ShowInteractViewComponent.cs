@@ -31,7 +31,7 @@ namespace _Scripts.Core.Systems.UI
             {
                 var entity = trigger.InteractedWith;
 
-                if (entity.IsNullOrDisposed())
+                if (World.IsDisposed(entity))
                 {
                     Hide();
                     continue;

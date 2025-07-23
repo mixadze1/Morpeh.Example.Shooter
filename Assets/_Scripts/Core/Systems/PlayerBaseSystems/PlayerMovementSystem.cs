@@ -9,7 +9,6 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
 {
     public sealed class PlayerMovementSystem : ISystem
     {
-        private readonly PlayerInput _input;
         private readonly MovementConfig _movementConfig;
         private PlayerInput.OnFootActions _onFoot;
         public World World { get; set; }
@@ -20,8 +19,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
 
         public PlayerMovementSystem(MovementConfig movementConfig, PlayerInput playerInput)
         {
-            _input = playerInput;
-            _onFoot = _input.OnFoot;
+            _onFoot = playerInput.OnFoot;
             _movementConfig = movementConfig;
         }
 

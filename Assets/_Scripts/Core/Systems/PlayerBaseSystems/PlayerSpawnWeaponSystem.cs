@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using _Scripts.Core.Configs.WeaponConfigs;
+﻿using _Scripts.Core.Configs.WeaponConfigs;
 using _Scripts.Core.Events;
 using _Scripts.Core.Providers.PlayerProviders;
 using _Scripts.Core.Providers.WeaponProviders;
-using Animancer;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Collections;
 using UnityEngine;
@@ -52,7 +50,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             {
                 var entity = trigger.InteractedWith;
 
-                if (entity.IsNullOrDisposed() || !_interactWeaponStash.Has(entity))
+                if (World.IsDisposed(entity) || !_interactWeaponStash.Has(entity))
                     continue;
 
                 var type = _interactWeaponStash.Get(entity).Type;
