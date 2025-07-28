@@ -33,11 +33,11 @@ namespace _Scripts.Core.Systems.Bullets
             {
                 ref var bullet = ref _bulletStash.Get(entity);
 
-                bullet.TimeAlive += deltaTime;
+                bullet.AddTimeAlive(deltaTime);
 
                 ref var transformComponent = ref _transformStash.Get(entity);
                 
-                if (bullet.TimeAlive >= bullet.Lifetime)
+                if (bullet.IsEndLife())
                 {
                     Object.Destroy(transformComponent.Transform.gameObject);
                     continue;
@@ -57,7 +57,7 @@ namespace _Scripts.Core.Systems.Bullets
                 {
                     if (hitInfo.collider.gameObject.layer == 6)
                     {
-                        if (_weaponsConfig.Weapons.TryGetValue(bullet.WeaponType, out var weaponCfg))
+                        if (_weaponsConfig.Weapons.TryGetValue(bullet.FromWeaponType, out var weaponCfg))
                         {
                             const float DecalOffset = 0.01f;
                             var hitPoint = hitInfo.point + hitInfo.normal * DecalOffset;

@@ -158,8 +158,8 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
 
             var instanceBullet = Object.Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
             ref var bulletComponent = ref instanceBullet.GetData();
-            bulletComponent.Lifetime = _weaponsConfig.LifetimeBullet;
-            bulletComponent.WeaponType = weaponComponent.TypeWeapon;
+            bulletComponent.SetupLifeTime(_weaponsConfig.LifetimeBullet);
+            bulletComponent.FromWeaponType = weaponComponent.TypeWeapon;
 
             ref var rigidbodyComponent = ref _rigidbodyStash.Get(instanceBullet.Entity);
             var rb = rigidbodyComponent.Rigidbody;

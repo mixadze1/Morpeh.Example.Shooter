@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using _Scripts.Core.Configs.WeaponConfigs;
 using _Scripts.Core.Providers.PlayerProviders;
 using Scellecs.Morpeh;
@@ -51,10 +52,21 @@ namespace _Scripts.Core.Providers.WeaponProviders
         #endif
     }
 
+    [Serializable]
     public struct BulletComponent : IComponent
     {
-       [ReadOnly] public float Lifetime;
-       [ReadOnly]  public float TimeAlive;
-       [ReadOnly]  public TypeWeapon WeaponType;
+        [SerializeField, ReadOnly] private float _timeAlive;
+        [SerializeField, ReadOnly] private float _lifeTime;
+
+        [ReadOnly] public TypeWeapon FromWeaponType;
+
+       public bool IsEndLife() => 
+           _timeAlive >= _lifeTime;
+
+       public void SetupLifeTime(float value) => 
+           _lifeTime = value;
+
+       public void AddTimeAlive(float value) => 
+           _timeAlive += value;
     }
 }
