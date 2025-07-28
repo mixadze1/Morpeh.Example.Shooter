@@ -2136,7 +2136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializedData:
-    AnimancerComponent: {fileID: 8596930250451702181}
+    _animancer: {fileID: 8596930250451702181}
 --- !u!1 &5879428763671400040
 GameObject:
   m_ObjectHideFlags: 0

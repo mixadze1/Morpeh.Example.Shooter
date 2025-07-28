@@ -1,4 +1,5 @@
 using _Scripts.Core.Configs;
+using _Scripts.Core.Configs.PlayerConfigs;
 using _Scripts.Core.Providers;
 using _Scripts.Core.Providers.PlayerProviders;
 using Scellecs.Morpeh;
@@ -15,7 +16,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
         private readonly CameraConfig _cameraConfig;
         private Filter _filter;
         private Stash<PlayerCameraComponent> _cameraStash;
-        private Stash<TransformComponent> _transfomrComponent;
+        private Stash<TransformComponent> _transformStash;
         private readonly PlayerInput _playerInput;
         public World World { get; set;}
 
@@ -29,7 +30,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
         {
             _filter = World.Filter.With<PlayerCameraComponent>().Build();
             _cameraStash = World.GetStash<PlayerCameraComponent>();
-            _transfomrComponent = World.GetStash<TransformComponent>();
+            _transformStash = World.GetStash<TransformComponent>();
         }
     
         public void OnUpdate(float deltaTime)
@@ -37,19 +38,18 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             Vector2 input = _playerInput.OnFoot.Look.ReadValue<Vector2>();
             foreach (var entity in _filter)
             {
-                ProcessLook(entity, deltaTime, input);
+                ProcessLook(entity, input);
             }
         }
 
-        public void ProcessLook(Entity entity, float deltaTime, Vector2 input)
+        public void ProcessLook(Entity entity, Vector2 input)
         {
             ref PlayerCameraComponent playerCameraComponent = ref _cameraStash.Get(entity);
-            ref TransformComponent transformComponent = ref _transfomrComponent.Get(entity);
+            ref TransformComponent transformComponent = ref _transformStash.Get(entity);
             ref float xRotation = ref playerCameraComponent.XRotation;
             var camera = playerCameraComponent.VirtualCamera;
             float mouseX = input.x;
             float mouseY = input.y;
-            
 
             var leftRightDirection = Vector3.up * mouseX * _cameraConfig.MouseSensitivity;
             transformComponent.Transform.Rotate(leftRightDirection);

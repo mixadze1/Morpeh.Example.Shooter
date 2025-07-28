@@ -26,11 +26,11 @@ namespace _Scripts.Core.Systems.Bullets
             foreach (var entity in _filter)
             {
                 ref var decal = ref _decalStash.Get(entity);
-                decal.TimeAlive += deltaTime;
+                decal.AddTimeAlive(deltaTime);
 
                 ref var transformComponent = ref _transformStash.Get(entity);
 
-                if (decal.TimeAlive >= decal.Lifetime)
+                if (decal.IsEndLife())
                 {
                     Object.Destroy(transformComponent.Transform.gameObject);
                 }

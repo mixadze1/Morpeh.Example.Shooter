@@ -47,13 +47,11 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
         }
 
         public void OnUpdate(float deltaTime)
-        {
-        }
+        { }
 
         public void Dispose()
         {
             _playerInput.OnFoot.InspectWeapon.performed -= OnInspectWeapon;
-
         }
     }
 }

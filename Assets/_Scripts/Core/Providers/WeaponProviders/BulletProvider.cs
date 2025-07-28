@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Scripts.Core.Configs.WeaponConfigs;
 using _Scripts.Core.Providers.PlayerProviders;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Providers;

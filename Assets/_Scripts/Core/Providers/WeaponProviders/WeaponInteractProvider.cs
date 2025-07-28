@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Core.Configs.WeaponConfigs;
 using _Scripts.Core.Providers.PlayerProviders;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Providers;
@@ -25,9 +26,6 @@ namespace _Scripts.Core.Providers.WeaponProviders
         [SerializeField, ValidateInput(nameof(ValidateTypeWeapon))] private TypeWeapon _typeWeapon;
 
         public TypeWeapon Type => _typeWeapon;
-        
-        private bool ValidateShootPoint(Transform t) => 
-            t != null;
 
         private bool ValidateTypeWeapon(TypeWeapon t) => 
             t != TypeWeapon.Default;

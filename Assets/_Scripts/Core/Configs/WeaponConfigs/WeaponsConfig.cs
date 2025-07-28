@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using _Scripts.Core.Providers.WeaponProviders;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Scripts.Core.Configs.WeaponConfigs
 {
@@ -37,13 +36,13 @@ namespace _Scripts.Core.Configs.WeaponConfigs
         public SerializedDictionary<Trigger, AnimationData> AnimationConfig;
         public float ShootPerSecond => _shootPerSecond;
     }
-}
 
-public enum TypeWeapon
-{
-    Default,
-    Ak,
-    Mk16,
-    Ar,
-    HandGun
+    public enum TypeWeapon
+    {
+        Default,
+        Ak,
+        Mk16,
+        Ar25,
+        HandGun
+    }
 }

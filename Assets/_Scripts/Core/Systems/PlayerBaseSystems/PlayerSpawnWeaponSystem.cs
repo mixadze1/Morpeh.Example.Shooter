@@ -14,7 +14,6 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
 
         private Stash<WeaponInteractComponent> _interactWeaponStash;
         private Stash<PlayerComponent> _playerComponentStash;
-        private Stash<AnimancerCustomComponent> _animancerStash;
 
         private Filter _filter;
 
@@ -35,7 +34,6 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
 
             _interactWeaponStash = World.GetStash<WeaponInteractComponent>();
             _playerComponentStash = World.GetStash<PlayerComponent>();
-            _animancerStash = World.GetStash<AnimancerCustomComponent>();
 
             _weaponSpawnEvent = World.GetEvent<PlayerSpawnWeaponEvent>();
             _weaponEvent = World.GetEvent<WeaponEvent>();
@@ -78,7 +76,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
                 _previousWeapon = weapon;
                 ref var weaponComponent = ref weapon.GetData();
                 weaponComponent.InitializeAmmo(config.MagazineConfig);
-                player.WeaponEntity = weapon.Entity;
+                player.SetupWeaponEntity(weapon.Entity);
                 
                 _weaponSpawnEvent.NextFrame(new PlayerSpawnWeaponEvent(weapon.Entity, config));
                 _weaponEvent.NextFrame(new WeaponEvent(Trigger.Get, weapon.Entity));

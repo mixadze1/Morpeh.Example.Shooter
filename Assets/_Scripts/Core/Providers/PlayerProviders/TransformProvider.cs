@@ -10,13 +10,25 @@ namespace _Scripts.Core.Providers.PlayerProviders
         private void Reset()
         {
             ref TransformComponent unityTransform = ref GetData();
-            unityTransform.Transform = this.transform;
+            unityTransform.SetupTransform(this.transform);
         }
     }
     
     [Serializable]
     public struct TransformComponent : IComponent
     {
-        public Transform Transform;    
+        [SerializeField] private Transform _transform;
+        public Transform Transform => _transform;
+
+        public void SetupTransform(Transform transform)
+        {
+            if (transform == null)
+            {
+                Debug.LogError($"In Transform Provider transform is Null. Check GameObject!");
+                return;
+            }
+            
+            _transform = transform;
+        }
     }
 }

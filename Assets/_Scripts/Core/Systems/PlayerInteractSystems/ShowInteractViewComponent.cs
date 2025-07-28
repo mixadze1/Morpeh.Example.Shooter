@@ -4,7 +4,7 @@ using _Scripts.Core.Providers.WeaponProviders;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Collections;
 
-namespace _Scripts.Core.Systems.UI
+namespace _Scripts.Core.Systems.PlayerInteractSystems
 {
     public sealed class ShowWeaponInteractViewSystem : ISystem
     {

@@ -1,4 +1,5 @@
 ﻿using System;
+using Animancer;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Providers;
 using UnityEngine;
@@ -13,7 +14,11 @@ namespace _Scripts.Core.Providers.PlayerProviders
     [Serializable]
     public struct PlayerComponent : IComponent
     {
-        public Transform PointForSpawnWeapon;
-        public Entity WeaponEntity;
+        [SerializeField] private Transform _pointForSpawn;
+        public Transform PointForSpawnWeapon => _pointForSpawn;
+        public Entity WeaponEntity { get; private set; }
+
+        public void SetupWeaponEntity(Entity entity) => 
+            WeaponEntity = entity;
     }
 }

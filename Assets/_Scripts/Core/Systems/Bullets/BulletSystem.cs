@@ -8,10 +8,10 @@ namespace _Scripts.Core.Systems.Bullets
 {
     public sealed class BulletSystem : ISystem
     {
+        private readonly WeaponsConfig _weaponsConfig;
         private Filter _filter;
         private Stash<BulletComponent> _bulletStash;
         private Stash<TransformComponent> _transformStash;
-        private readonly WeaponsConfig _weaponsConfig;
 
         public World World { get; set; }
 
@@ -65,7 +65,7 @@ namespace _Scripts.Core.Systems.Bullets
                                 Quaternion.LookRotation(hitInfo.normal));
                           
                             ref var component = ref instance.GetData();
-                            component.Lifetime = _weaponsConfig.LifetimeDecal;
+                            component.SetupLifeTime(_weaponsConfig.LifetimeDecal);
                         }
 
                         Object.Destroy(bulletGameObject);

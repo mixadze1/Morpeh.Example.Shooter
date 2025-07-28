@@ -1,5 +1,5 @@
 ﻿using _Scripts.Core.Configs;
-using _Scripts.Core.Providers;
+using _Scripts.Core.Configs.PlayerConfigs;
 using _Scripts.Core.Providers.PlayerProviders;
 using Scellecs.Morpeh;
 using UnityEngine;
@@ -50,26 +50,28 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             var controller = characterComponent.CharacterController;
 
             Vector3 move = transform.TransformDirection(new Vector3(input.x, 0, input.y)) * _movementConfig.SpeedValue;
-            ref Vector3 velocity = ref characterComponent.PlayerVelocity;
+            Vector3 copyVelocity = characterComponent.PlayerVelocity;
 
-            velocity.y += _movementConfig.Gravity * deltaTime;
-            if (characterComponent.IsGround && velocity.y < 0)
-                velocity.y = _movementConfig.OnGroundDefaultGravity;
+            copyVelocity.y += _movementConfig.Gravity * deltaTime;
+            if (characterComponent.IsGround && copyVelocity.y < 0)
+                copyVelocity.y = _movementConfig.OnGroundDefaultGravity;
 
-            Vector3 final = move + new Vector3(0, velocity.y, 0);
+            Vector3 final = move + new Vector3(0, copyVelocity.y, 0);
+            characterComponent.SetVelocity(final);
             controller.Move(final * deltaTime);
         }
 
-        private void OnJump(InputAction.CallbackContext obj)
+        private void OnJump(InputAction.CallbackContext context)
         {
             foreach (var entity in _filter)
             {
-                ref var characterComponent = ref _characterComponent.Get(entity);
-                ref var velocity = ref characterComponent.PlayerVelocity;
+                ref CharacterComponent characterComponent = ref _characterComponent.Get(entity);
                 if (!characterComponent.IsGround)
                     return;
-                velocity.y = Mathf.Sqrt(Mathf.Abs(_movementConfig.JumpHeight * _movementConfig.Gravity));
-                CustomDebug.Log($"[Player] Jump", Color.white);
+                
+                float yValue = Mathf.Sqrt(Mathf.Abs(_movementConfig.JumpHeight * _movementConfig.Gravity));
+                characterComponent.SetVelocityY(yValue);
+                CustomDebug.Log($"[Player] Jump! Gravity:{_movementConfig.Gravity}, Jump Height: {_movementConfig.JumpHeight}", new Color(0.4f, 0.93f, 1f));
             }
         }
         

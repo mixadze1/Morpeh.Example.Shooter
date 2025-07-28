@@ -115,7 +115,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
                 float currentTime = Time.time;
                 _lastShootTimes.TryGetValue(weaponEntity, out var lastShootTime);
 
-                Debug.Log($"Delay: {currentTime} - {lastShootTime} < {shootDelay}");
+                CustomDebug.Log($"[Shoot Info] Delay Shoot: {currentTime - lastShootTime} < {shootDelay}", new Color(1f, 0.91f, 0.38f));
                 if (currentTime - lastShootTime < shootDelay)
                     continue;
 

@@ -1,4 +1,5 @@
 ﻿using _Scripts.Core.Configs;
+using _Scripts.Core.Configs.PlayerConfigs;
 using _Scripts.Core.Events;
 using _Scripts.Core.Providers.PlayerProviders;
 using Scellecs.Morpeh;
@@ -10,15 +11,16 @@ namespace _Scripts.Core.Systems.PlayerInteractSystems
     public sealed class PlayerInteractSystem : ISystem
     {
         private readonly PlayerInteractConfig _playerInteractConfig;
-        private Stash<InteractComponent> _interactStash;
+        private readonly PlayerInput _playerInput;
         
-        private Filter _filterPlayer;
+        private Stash<InteractComponent> _interactStash;
         private Stash<PlayerCameraComponent> _playerCameraStash;
+
+        private Filter _filterPlayer;
 
         private Event<PlayerClickInteractedEvent> _eventClick;
         private Event<PlayerLookInteractItemEvent> _eventLook;
-        private readonly PlayerInput _playerInput;
-        
+
         private Entity _lastLookedEntity;
         
         public World World { get; set; }
@@ -60,7 +62,7 @@ namespace _Scripts.Core.Systems.PlayerInteractSystems
             {
                 _eventLook.NextFrame(new PlayerLookInteractItemEvent(default));
                 _lastLookedEntity = default;
-                CustomDebug.Log($"[Update Player] Look cleared", Color.gray);
+                CustomDebug.Log($"[Player] Look cleared", Color.gray);
             }
         }
 

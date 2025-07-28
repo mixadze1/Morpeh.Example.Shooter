@@ -1685,7 +1685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializedData:
-    AnimancerComponent: {fileID: 8346409814069387324}
+    _animancer: {fileID: 8346409814069387324}
 --- !u!114 &244685069403581142
 MonoBehaviour:
   m_ObjectHideFlags: 0

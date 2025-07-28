@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Scripts.Core.Configs
+namespace _Scripts.Core.Configs.PlayerConfigs
 {
     [CreateAssetMenu]
     public class CameraConfig : ScriptableObject

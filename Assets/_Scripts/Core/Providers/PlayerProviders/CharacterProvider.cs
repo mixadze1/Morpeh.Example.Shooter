@@ -6,9 +6,14 @@ using IComponent = Scellecs.Morpeh.IComponent;
 
 namespace _Scripts.Core.Providers.PlayerProviders
 {
+    [RequireComponent(typeof(CharacterController))]
     public class CharacterProvider : MonoProvider<CharacterComponent>
     {
-        
+        public void Reset()
+        {
+            ref var component = ref GetData();
+            component.SetupCharacter(GetComponent<CharacterController>());
+        }
     }
 
     [Serializable]
@@ -16,8 +21,20 @@ namespace _Scripts.Core.Providers.PlayerProviders
     {
         [SerializeField] private CharacterController _characterController;
 
+        [SerializeField, ReadOnly] private Vector3 _velocity;
+        
+        public Vector3 PlayerVelocity => _velocity;
         public CharacterController CharacterController => _characterController;
-       [ReadOnly] public Vector3 PlayerVelocity;
+
         public bool IsGround => _characterController.isGrounded;
+
+        public void SetupCharacter(CharacterController character) => 
+            _characterController = character;
+
+        public void SetVelocity(Vector3 v) => 
+            _velocity = v;
+
+        public void SetVelocityY(float y) 
+            => _velocity.y = y;
     }
 }

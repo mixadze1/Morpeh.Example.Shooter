@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Core.Configs.WeaponConfigs;
 using Animancer;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Providers;
@@ -31,6 +32,11 @@ namespace _Scripts.Core.Providers.WeaponProviders
 
         public void InitializeAmmo(WeaponMagazineConfig config)
         {
+            if (config == null)
+            {
+                Debug.LogError($"You are try setup null config in weapon {_typeWeapon}!");
+                return;
+            }
             _amountAmmoInMagazine = config.MaxAmmoInMagazine;
             _maxAmmoInMagazine = config.MaxAmmoInMagazine;
             _amountMagazines = config.AmountMagazines;;
@@ -46,14 +52,13 @@ namespace _Scripts.Core.Providers.WeaponProviders
         {
             _amountMagazines--;
             _amountAmmoInMagazine = _maxAmmoInMagazine;
-            CustomDebug.Log($"Reload Magazines: {_amountMagazines}, ammo: {_amountAmmoInMagazine}", Color.white);
+            CustomDebug.Log($"[Player] Reload Magazines: {_amountMagazines}, ammo: {_amountAmmoInMagazine}", new Color(1f, 0.69f, 0.51f));
         }
 
         public void OnShoot()
         {
             _amountAmmoInMagazine--;
-            CustomDebug.Log($"Left: {AmountAmmo}/{MaxAmmoInMagazine}", Color.white);
-
+            CustomDebug.Log($"[Player] Shoot! Left: {AmountAmmo}/{MaxAmmoInMagazine}", Color.white);
         }
         
         public Transform ShootPoint => _shootPoint;

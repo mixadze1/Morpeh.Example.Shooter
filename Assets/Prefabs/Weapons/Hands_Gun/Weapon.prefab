@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializedData:
-    Transform: {fileID: 6157716320564341865}
+    _transform: {fileID: 6157716320564341865}
 --- !u!114 &3647689110989909109
 MonoBehaviour:
   m_ObjectHideFlags: 0

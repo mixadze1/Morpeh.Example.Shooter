@@ -56,17 +56,17 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             foreach (var t in triggers)
             {
                 ref var animancerComponent = ref _animancerStash.Get(t.Entity);
-                PlayAnimation(animancerComponent, t.Trigger);
+                var state = PlayAnimation(animancerComponent, t.Trigger);
             }
         }
 
         public AnimancerState PlayAnimation(AnimancerCustomComponent animancerComponent, Trigger trigger)
         {
             var transition = animancerComponent.GetAnimation(trigger);
-            var state = animancerComponent.AnimancerComponent.Play(transition);
+            var state = animancerComponent.Animancer.Play(transition);
             state.Time = 0f;
             animancerComponent.CurrentAnim = trigger;
-            CustomDebug.Log($"[Animation] Play animation {trigger}", Color.green);
+            CustomDebug.Log($"[Animation] Play animation {trigger}", new Color(0.53f, 1f, 0.51f));
             return state;
         }
 

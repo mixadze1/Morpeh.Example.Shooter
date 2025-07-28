@@ -12,15 +12,21 @@ namespace _Scripts.Core.Providers.WeaponProviders
         public void Reset()
         {
             ref var data = ref GetData();
-            data.AnimancerComponent = GetComponent<AnimancerComponent>();
+            data.SetupAnimancer(GetComponent<AnimancerComponent>());
         }
     }
 
     [Serializable]
     public struct AnimancerCustomComponent : IComponent
     {
-        public AnimancerComponent AnimancerComponent;
+        [SerializeField] private AnimancerComponent _animancer;
+        
         private Dictionary<Trigger, ClipTransition> _transitions;
+        public AnimancerComponent Animancer => _animancer;
+
+        public void SetupAnimancer(AnimancerComponent animancerComponent) => 
+            _animancer = animancerComponent;
+
         public Trigger CurrentAnim { get; set; }
 
         public void InitAnimations(Dictionary<Trigger, AnimationData> animations)
