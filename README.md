@@ -54,7 +54,7 @@ Key architecture choices:
 
 ## ⚙️ Tech Stack
 
-- Unity 2022.3.26
+- Unity 2022.3.52
 - [Morpeh ECS 2024.1](https://github.com/scellecs/morpeh)
 - [Morpeh Events](https://github.com/codewriter-packages/Morpeh.Events)
 - [VContainer](https://github.com/hadashiA/VContainer)
@@ -62,12 +62,3 @@ Key architecture choices:
 - ScriptableObjects for configuration
 
 ---
-
-
-## 🚀 Contributions
-
-Feel free to fork and contribute to this example — PRs and suggestions are welcome!
-
----
-
-**Made with ☕ and ECS.**
