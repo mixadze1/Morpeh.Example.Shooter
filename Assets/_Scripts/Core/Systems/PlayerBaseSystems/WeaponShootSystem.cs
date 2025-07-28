@@ -67,7 +67,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
                 if (!weaponComponent.TryReload())
                     return;
 
-                weaponComponent.Reload();
+                weaponComponent.OnCompleteReload();
             }
         }
 
@@ -87,7 +87,14 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
                     CustomDebug.Log("Can't Reload. Is Empty!", Color.yellow);
                     return;
                 }
-            
+
+                if (weaponComponent.IsReload)
+                {
+                    CustomDebug.Log("[Weapon Info] Is Already reloading! Wait!", Color.yellow);
+                    return;
+                }
+                
+                weaponComponent.OnStartReload();
                 _weaponEvent.NextFrame(new WeaponEvent(Trigger.Reload, weaponEntity));
             }
         }

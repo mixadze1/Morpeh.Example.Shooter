@@ -3,6 +3,7 @@ using _Scripts.Core.Configs.WeaponConfigs;
 using Animancer;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Providers;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -20,11 +21,13 @@ namespace _Scripts.Core.Providers.WeaponProviders
     {
         [SerializeField] private Transform _shootPoint;
         [SerializeField] private TypeWeapon _typeWeapon;
+
+        [ReadOnly, ShowInInspector] public bool IsReload { get; private set; } 
         
         [Header("Weapon Model")]
-        [SerializeField] private int _amountAmmoInMagazine;
-        [SerializeField] private int _maxAmmoInMagazine;
-        [SerializeField] private int _amountMagazines;
+        [SerializeField, ReadOnly] private int _amountAmmoInMagazine;
+        [SerializeField, ReadOnly] private int _maxAmmoInMagazine;
+        [SerializeField, ReadOnly] private int _amountMagazines;
 
         public int AmountAmmo => _amountAmmoInMagazine;
         public int MaxAmmoInMagazine => _maxAmmoInMagazine;
@@ -48,16 +51,21 @@ namespace _Scripts.Core.Providers.WeaponProviders
         public bool TryReload() => 
             _amountMagazines > 0;
 
-        public void Reload()
+        public void OnStartReload() => 
+            IsReload = true;
+
+        public void OnCompleteReload()
         {
             _amountMagazines--;
             _amountAmmoInMagazine = _maxAmmoInMagazine;
+            IsReload = false;
             CustomDebug.Log($"[Player] Reload Magazines: {_amountMagazines}, ammo: {_amountAmmoInMagazine}", new Color(1f, 0.69f, 0.51f));
         }
 
         public void OnShoot()
         {
             _amountAmmoInMagazine--;
+            IsReload = false;
             CustomDebug.Log($"[Player] Shoot! Left: {AmountAmmo}/{MaxAmmoInMagazine}", Color.white);
         }
         

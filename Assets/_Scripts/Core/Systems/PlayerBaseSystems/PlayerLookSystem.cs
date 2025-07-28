@@ -1,6 +1,4 @@
-using _Scripts.Core.Configs;
 using _Scripts.Core.Configs.PlayerConfigs;
-using _Scripts.Core.Providers;
 using _Scripts.Core.Providers.PlayerProviders;
 using Scellecs.Morpeh;
 using Unity.IL2CPP.CompilerServices;
