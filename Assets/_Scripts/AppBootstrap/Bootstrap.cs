@@ -47,6 +47,7 @@ namespace _Scripts.AppBootstrap
             systemsGroup.AddSystem(new InspectWeaponSystem(_playerInput));
             systemsGroup.AddSystem(new BulletSystem(_weaponsConfig));
             systemsGroup.AddSystem(new DecalBulletSystem());
+            systemsGroup.AddSystem(new CursorLockSystem());
 
             this._world.AddSystemsGroup(order: 0, systemsGroup);
         }
