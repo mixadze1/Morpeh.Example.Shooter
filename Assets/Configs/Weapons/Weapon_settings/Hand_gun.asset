@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0895f64ee80d4038af93d91ae13b72fa, type: 3}
+  m_Name: Hand_gun
+  m_EditorClassIdentifier: 
+  _speedBullet: 340
+  _shootPerSecond: 0.25
+  _bulletPrefab: {fileID: 8738878015750492325, guid: 1bf53e858a93b1b4096d1d3759f53180, type: 3}
+  _playerWeaponPreset: {fileID: 244685069403581142, guid: c807fef552aa28b4eb19048f431b775c, type: 3}
+  _magazineConfig:
+    MaxAmmoInMagazine: 14
+    AmountMagazines: 5
+  _decalWallProvider: {fileID: 4931990305696423508, guid: 3e09b439c18dc934eb27208abfdbb3e3, type: 3}
+  AnimationConfig:
+    _serializedList:
+    - Key: 1
+      Value:
+        AnimationClip: {fileID: 7400000, guid: e20690ac7b30a9146a4fdd7799a125d8, type: 3}
+        FadeTime: 0.3
+        Speed: 1.75
+    - Key: 6
+      Value:
+        AnimationClip: {fileID: 7400000, guid: cadd982bbf524644094036f3e389ad63, type: 3}
+        FadeTime: 0.3
+        Speed: 1
+    - Key: 2
+      Value:
+        AnimationClip: {fileID: 7400000, guid: cc0c6edbec561f548abda5714a879db2, type: 3}
+        FadeTime: 0.1
+        Speed: 1.5
+    - Key: 3
+      Value:
+        AnimationClip: {fileID: 7400000, guid: 4883f0a3be7d9164b8b9df7b4f685809, type: 3}
+        FadeTime: 0.3
+        Speed: 1
+    - Key: 4
+      Value:
+        AnimationClip: {fileID: 7400000, guid: c77ac813c01970e44871fc413736d3d5, type: 3}
+        FadeTime: 0.3
+        Speed: 1
+    - Key: 5
+      Value:
+        AnimationClip: {fileID: 7400000, guid: 74292253e1a143240ad8f57fee83cfd2, type: 3}
+        FadeTime: 0.3
+        Speed: 1

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf7afc2084d40a89be58daa09f0e4f6, type: 3}
+  m_Name: WeaponsConfigs
+  m_EditorClassIdentifier: 
+  _lifetimeBullet: 5
+  _lifetimeDecal: 5
+  _weapons:
+    _serializedList:
+    - Key: 3
+      Value: {fileID: 11400000, guid: 709fdbeb2a1158a43bdd076d1650ee8e, type: 2}
+    - Key: 4
+      Value: {fileID: 11400000, guid: 02cad7a2654623a4a91e6dfcfba53e20, type: 2}
+    - Key: 2
+      Value: {fileID: 11400000, guid: 3ecdd04683682aa4289a19eebb4b1392, type: 2}
