@@ -1,4 +1,5 @@
-﻿using _Scripts.Core.Events;
+﻿using System;
+using _Scripts.Core.Events;
 using _Scripts.Core.Providers.PlayerProviders;
 using _Scripts.Core.Providers.WeaponProviders;
 using Animancer;
@@ -21,26 +22,30 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             _animancerStash = World.GetStash<AnimancerCustomComponent>();
             
            _weaponEvents = World.GetEvent<WeaponEvent>();
-           _weaponEvents.Subscribe(OnTrigger);
 
            _animationEvents = World.GetEvent<AnimationEvents>();
 
            _spawnWeapon = World.GetEvent<PlayerSpawnWeaponEvent>();
-           _spawnWeapon.Subscribe(OnSpawnWeapon);
         }
 
-        private void OnSpawnWeapon(FastList<PlayerSpawnWeaponEvent> triggers)
+        public void OnUpdate(float deltaTime)
         {
-            foreach (var t in triggers)
-            {
-                ref var animancerComponent = ref _animancerStash.Get(t.WeaponEntity);
-                animancerComponent.InitAnimations(t.WeaponConfig.AnimationConfig);
-                AddAnimationTransition(animancerComponent, Trigger.Get, Trigger.Idle);
-                AddAnimationTransition(animancerComponent, Trigger.Shoot, Trigger.Idle);
-                AddAnimationTransition(animancerComponent, Trigger.Idle_Other, Trigger.Idle);
-                AddAnimationTransition(animancerComponent, Trigger.Reload, Trigger.Idle);
-                AddAnimationDispatch(animancerComponent, Trigger.Reload, AnimationTrigger.ReloadEnd, t.WeaponEntity);
-            }
+            foreach (var e in _spawnWeapon.publishedChanges) 
+                OnSpawnWeapon(e);
+            
+            foreach (var e in _weaponEvents.publishedChanges) 
+                OnTriggerAnim(e);
+        }
+
+        private void OnSpawnWeapon(PlayerSpawnWeaponEvent e)
+        {
+            ref var animancerComponent = ref _animancerStash.Get(e.WeaponEntity);
+            animancerComponent.InitAnimations(e.WeaponConfig.AnimationConfig);
+            AddAnimationTransition(animancerComponent, Trigger.Get, Trigger.Idle);
+            AddAnimationTransition(animancerComponent, Trigger.Shoot, Trigger.Idle);
+            AddAnimationTransition(animancerComponent, Trigger.Idle_Other, Trigger.Idle);
+            AddAnimationTransition(animancerComponent, Trigger.Reload, Trigger.Idle);
+            AddAnimationDispatch(animancerComponent, Trigger.Reload, AnimationTrigger.ReloadEnd, e.WeaponEntity);
         }
 
         private void AddAnimationDispatch(AnimancerCustomComponent animancerComponent, Trigger fromTrigger,
@@ -51,13 +56,10 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
                 () => _animationEvents.NextFrame(new AnimationEvents(trigger, weaponEntity));
         }
 
-        private void OnTrigger(FastList<WeaponEvent> triggers)
+        private void OnTriggerAnim(WeaponEvent e)
         {
-            foreach (var t in triggers)
-            {
-                ref var animancerComponent = ref _animancerStash.Get(t.Entity);
-                var state = PlayAnimation(animancerComponent, t.Trigger);
-            }
+            ref var animancerComponent = ref _animancerStash.Get(e.Entity);
+            var state = PlayAnimation(animancerComponent, e.Trigger);
         }
 
         public AnimancerState PlayAnimation(AnimancerCustomComponent animancerComponent, Trigger trigger)
@@ -76,12 +78,9 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             transition.Events.OnEnd += () => PlayAnimation(animancerComponent, endState);
         }
 
-        public void OnUpdate(float deltaTime)
-        {
-        }
-
         public void Dispose()
         {
+            
         }
     }
 }

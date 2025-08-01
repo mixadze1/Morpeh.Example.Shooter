@@ -20,21 +20,26 @@ namespace _Scripts.Core.Systems.PlayerInteractSystems
             _interactWeaponStash = World.GetStash<WeaponInteractComponent>();
             _viewInteractStash = World.GetStash<ShowInteractViewComponent>();
             _eventLook = World.GetEvent<PlayerLookInteractItemEvent>();
-            _eventLook.Subscribe(OnTrigger);
             
             Hide();
         }
 
-        private void OnTrigger(FastList<PlayerLookInteractItemEvent> triggers)
+        public void OnUpdate(float deltaTime)
         {
-            foreach (var trigger in triggers)
+            foreach (var e in _eventLook.publishedChanges)
             {
+                OnTrigger(e);
+            }
+        }
+
+        private void OnTrigger(PlayerLookInteractItemEvent trigger)
+        {
                 var entity = trigger.InteractedWith;
 
                 if (World.IsDisposed(entity))
                 {
                     Hide();
-                    continue;
+                    return;
                 }
 
                 if (_interactWeaponStash.Has(entity))
@@ -47,7 +52,6 @@ namespace _Scripts.Core.Systems.PlayerInteractSystems
                 {
                     Hide();
                 }
-            }
         }
 
         private void Show(string itemName)
@@ -61,8 +65,6 @@ namespace _Scripts.Core.Systems.PlayerInteractSystems
             foreach (var v in _viewInteractStash) 
                 v.Hide();
         }
-
-        public void OnUpdate(float deltaTime) { }
 
         public void Dispose()
         {

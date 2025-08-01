@@ -20,6 +20,7 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
         private PlayerWeaponProvider _previousWeapon;
         private Event<PlayerSpawnWeaponEvent> _weaponSpawnEvent;
         private Event<WeaponEvent> _weaponEvent; 
+        private Event<PlayerClickInteractedEvent> _clickInteract; 
 
         public World World { get; set; }
 
@@ -38,22 +39,26 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             _weaponSpawnEvent = World.GetEvent<PlayerSpawnWeaponEvent>();
             _weaponEvent = World.GetEvent<WeaponEvent>();
 
-            var onClick = World.GetEvent<PlayerClickInteractedEvent>();
-            onClick.Subscribe(OnClickInteractItem);
+            _clickInteract = World.GetEvent<PlayerClickInteractedEvent>();
         }
 
-        private void OnClickInteractItem(FastList<PlayerClickInteractedEvent> triggers)
+        public void OnUpdate(float deltaTime)
         {
-            foreach (var trigger in triggers)
+            foreach (var e in _clickInteract.publishedChanges)
             {
-                var entity = trigger.InteractedWith;
-
-                if (World.IsDisposed(entity) || !_interactWeaponStash.Has(entity))
-                    continue;
-
-                var type = _interactWeaponStash.Get(entity).Type;
-                SpawnWeapon(type);
+                OnClickInteractItem(e);
             }
+        }
+
+        private void OnClickInteractItem(PlayerClickInteractedEvent e)
+        {
+            var entity = e.InteractedWith;
+
+            if (World.IsDisposed(entity) || !_interactWeaponStash.Has(entity))
+                return;
+
+            var type = _interactWeaponStash.Get(entity).Type;
+            SpawnWeapon(type);
         }
 
         private void SpawnWeapon(TypeWeapon type)
@@ -90,11 +95,6 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
                 Debug.Log($"Previous Weapon: {_previousWeapon}");
                 Object.Destroy(_previousWeapon.gameObject);
             }
-        }
-
-        public void OnUpdate(float deltaTime)
-        {
-            
         }
 
         public void Dispose()

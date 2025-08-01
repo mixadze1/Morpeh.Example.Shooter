@@ -24,14 +24,8 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             _viewAmmoStash = World.GetStash<AmmoViewComponent>();
             
             _weaponEvent = World.GetEvent<WeaponEvent>();
-            _weaponEvent.Subscribe(OnWeaponEvents);
-
             _animationEvents = World.GetEvent<AnimationEvents>();
-            _animationEvents.Subscribe(OnEndReload);
-            
             _onSpawnWeapon = World.GetEvent<PlayerSpawnWeaponEvent>();
-            _onSpawnWeapon.Subscribe(OnSpawnWeapon);
-
             Hide();
         }
 
@@ -44,34 +38,37 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             }
         }
 
-        private void OnEndReload(FastList<AnimationEvents> events)
+        public void OnUpdate(float deltaTime)
         {
-            foreach (var e in events)
-            {
-                ref var weaponComponent = ref _weaponStash.Get(e.WeaponEntity);
-                UpdateWeaponView(ref weaponComponent);
-            }
+            foreach (var e in _weaponEvent.publishedChanges) 
+                OnWeaponEvents(e);
+            
+            foreach (var e in _animationEvents.publishedChanges) 
+                OnEndReload(e);
+            
+            foreach (var e in _onSpawnWeapon.publishedChanges) 
+                OnSpawnWeapon(e);
         }
 
-        private void OnSpawnWeapon(FastList<PlayerSpawnWeaponEvent> events)
+        private void OnEndReload(AnimationEvents e)
         {
-            foreach (var e in events)
-            {
-                ref var weaponComponent = ref _weaponStash.Get(e.WeaponEntity);
-                UpdateWeaponView(ref weaponComponent);
-            }
+            ref var weaponComponent = ref _weaponStash.Get(e.WeaponEntity);
+            UpdateWeaponView(ref weaponComponent);
         }
 
-        private void OnWeaponEvents(FastList<WeaponEvent> events)
+        private void OnSpawnWeapon(PlayerSpawnWeaponEvent e)
         {
-            foreach (var e in events)
-            {
-                if (e.Trigger == Trigger.Shoot)
-                {
-                    ref var weaponComponent = ref _weaponStash.Get(e.Entity);
-                    UpdateWeaponView(ref weaponComponent);
-                }
-            }
+            ref var weaponComponent = ref _weaponStash.Get(e.WeaponEntity);
+            UpdateWeaponView(ref weaponComponent);
+        }
+
+        private void OnWeaponEvents(WeaponEvent e)
+        {
+            if (e.Trigger != Trigger.Shoot)
+                return;
+            
+            ref var weaponComponent = ref _weaponStash.Get(e.Entity);
+            UpdateWeaponView(ref weaponComponent);
         }
 
         private void UpdateWeaponView(ref WeaponComponent weaponComponent)
@@ -83,10 +80,6 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
                 viewAmmoComponent.UpdateView(weaponComponent.AmountAmmo, weaponComponent.MaxAmmoInMagazine,
                     weaponComponent.AmountMagazines);
             }
-        }
-
-        public void OnUpdate(float deltaTime)
-        {
         }
 
         public void Dispose()

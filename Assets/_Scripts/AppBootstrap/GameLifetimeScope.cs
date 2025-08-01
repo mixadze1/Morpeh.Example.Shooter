@@ -13,6 +13,7 @@ namespace _Scripts.AppBootstrap
         [SerializeField] private CameraConfig _cameraConfig;
         [SerializeField] private PlayerInteractConfig  _interactConfig;
         [SerializeField] private WeaponsConfig  _weaponsConfig;
+        [SerializeField] private HealthConfig  _healthConfig;
         
         protected override void Configure(IContainerBuilder builder)
         {
@@ -20,6 +21,7 @@ namespace _Scripts.AppBootstrap
             builder.RegisterInstance(_cameraConfig);
             builder.RegisterInstance(_interactConfig);
             builder.RegisterInstance(_weaponsConfig);
+            builder.RegisterInstance(_healthConfig);
             builder.Register<PlayerInput>(Lifetime.Singleton);
         }
     }

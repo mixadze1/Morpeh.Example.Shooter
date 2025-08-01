@@ -53,7 +53,7 @@ namespace _Scripts.Core.Systems.Bullets
                 var position = bulletGameObject.transform.position;
                 var direction = bulletGameObject.transform.forward;
 
-                if (Physics.Raycast(position, direction, out var hitInfo, 0.5f))
+                if (Physics.Raycast(position, direction, out var hitInfo, 1f))
                 {
                     if (hitInfo.collider.gameObject.layer == 6)
                     {

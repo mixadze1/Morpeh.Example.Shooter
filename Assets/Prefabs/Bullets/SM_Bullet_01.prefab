@@ -132,6 +132,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a806d71f604a3ba71cfca95be3deb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializedData:
+    _timeAlive: 0
+    _lifeTime: 0
+    FromWeaponType: 0
 --- !u!54 &3474156974827805769
 Rigidbody:
   m_ObjectHideFlags: 0

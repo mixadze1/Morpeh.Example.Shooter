@@ -41,20 +41,24 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
 
             _weaponEvent = World.GetEvent<WeaponEvent>();
             _animationEvents = World.GetEvent<AnimationEvents>();
-            _animationEvents.Subscribe(OnTriggersAnimation);
+            
             _playerInput.OnFoot.Shoot.started += OnShoot;
             _playerInput.OnFoot.Reload.performed += Reload;
         }
 
-        private void OnTriggersAnimation(FastList<AnimationEvents> events)
+        public void OnUpdate(float deltaTime)
         {
-            foreach (var e in events)
+            foreach (var e in _animationEvents.publishedChanges)
             {
-                if (e.Trigger == AnimationTrigger.ReloadEnd)
-                {
-                    CompleteReload();
-                }
+                OnTriggersAnimation(e);
             }
+            
+        }
+
+        private void OnTriggersAnimation(AnimationEvents e)
+        {
+            if (e.Trigger == AnimationTrigger.ReloadEnd)
+                CompleteReload();
         }
 
         private void CompleteReload()
@@ -175,8 +179,6 @@ namespace _Scripts.Core.Systems.PlayerBaseSystems
             rb.velocity = direction * speed;
             instanceBullet.transform.rotation = Quaternion.LookRotation(rb.velocity);
         }
-
-        public void OnUpdate(float deltaTime) { }
 
         public void Dispose()
         {
